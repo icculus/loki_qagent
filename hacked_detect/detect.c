@@ -78,8 +78,7 @@ int main ( void ) {
             _("bugs"));
 */
 	fprintf (report, 
-		"<cpu>\n<name>%s</name>\n<vendor>%s</vendor>\n<model>%s</model>\n<frequency>%i</frequency>\n<flags>%s</flags>\n<bogomips>%s</bogomips>\n<bugs>%s</bugs>\n</cpu>\n",
-            ToUpper(device2str(CPU)),
+		"<cpu>\n<vendor>%s</vendor>\n<model>%s</model>\n<frequency>%i</frequency>\n<flags>%s</flags>\n<bogomips>%s</bogomips>\n<bugs>%s</bugs>\n</cpu>\n",
             _("vendor"),
             _("model"),
             _("frequency"),
