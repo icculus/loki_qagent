@@ -5,7 +5,9 @@ include ../host.def
 .PRECIOUS: %.h %.moc.cpp %.moc.o %.cpp %impl.h %impl.cpp build/x11/%.moc.cpp build/embedded/%.moc.cpp
 
 # all: build build/x11/qagent_x11 build/embedded/qagent_embedded
-all: build build/x11/qagent_x11
+all: build/ x11
+
+x11: build/ build/x11/qagent_x11
 
 CC=gcc
 CPP=gcc
@@ -69,6 +71,9 @@ build/:
 	mkdir build/embedded/KDE
 
 ############## EMBEDDED BUILD OF DOOM AND EVIL ###############
+
+# PLEASE NOTE: This doesn't work yet. Fixing it IS on my list of things
+# to do....
 
 EMBEDDED_CPPFLAGS=-I$(QTEMBEDDEDDIR)/include
 EMBEDDED_CFLAGS=-I$(QTEMBEDDEDDIR)/include

@@ -33,7 +33,6 @@ all : 	$(BUILD_DIR) \
 	$(BUILD_DIR)/transport_mail.sh \
 	$(BUILD_DIR)/xinfo.sh \
 	$(BUILD_DIR)/qagent_x11 \
-	$(BUILD_DIR)/qagent_fbcon \
 	$(BUILD_DIR)/privacy.txt \
 	$(BUILD_DIR)/$(KEY_NAME)
 
@@ -89,11 +88,11 @@ $(BUILD_DIR)/qagent: qt_gui/*.cpp qt_gui/*.h host.def
 
 $(BUILD_DIR)/qagent_x11: qt_gui/*.cpp qt_gui/*.h host.def
 	cd qt_gui && make x11 && cd ..
-	cp qt_gui/qagent_x11 build/ && cd ..
+	cp qt_gui/build/x11/qagent_x11 build/ && cd ..
 
 $(BUILD_DIR)/qagent_fbcon: qt_gui/*.cpp qt_gui/*.h host.def
 	cd qt_gui && make embedded && cd ..
-	cp qt_gui/qagent_fbcon build/ && cd ..
+	cp qt_gui/build/embedded/qagent_fbcon build/ && cd ..
 
 $(BUILD_DIR)/md5sum: $(SETUPDB_DIR)/md5sum
 	cp $(SETUPDB_DIR)/md5sum $(BUILD_DIR)
