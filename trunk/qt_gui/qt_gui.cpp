@@ -11,6 +11,10 @@
 void run_QT_GUI ( int argc, char *argv[] )
 {
 	QApplication app(argc,argv);
+	QTranslator translator(&app);
+	translator.load("./qagent_en.qm");	// fixme
+	app.installTranslator(&translator);
+
 	qagentImpl *impl = new qagentImpl;
 
 	app.setMainWidget(impl);

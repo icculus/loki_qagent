@@ -15,11 +15,11 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>TextLabel1</source>
+        <source>choosePathLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>ButtonGroup2</source>
+        <source>pathButtonGroup</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -27,7 +27,7 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>TextLabel2</source>
+        <source>standardPathLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -35,15 +35,19 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>TextLabel3</source>
+        <source>advancedPathLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>TextLabel4</source>
+        <source>pressNextLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
         <source>Select Mode</source>
+        <translation type='unfinished'></translation>
+    </message>
+    <message>
+        <source>chooseProductLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -75,15 +79,15 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>E-mail Address</source>
+        <source>emailAddressLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Registration Number (optional)</source>
+        <source>regNoLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Full Name</source>
+        <source>fullNameLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -99,19 +103,19 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Login</source>
+        <source>fenrisLoginLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Password</source>
+        <source>fenrisPasswordLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Description of Bug</source>
+        <source>fenrisBugTextLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>To obtain a Fenris login and password, please visit http://fenris.lokigames.com</source>
+        <source>fenrisInfoLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -123,7 +127,7 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Use Encryption (requires GNU Privacy Guard)</source>
+        <source>gpgCheckBox</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -131,15 +135,19 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
+        <source>dispatchMechanismGroup</source>
+        <translation type='unfinished'></translation>
+    </message>
+    <message>
+        <source>emailDispatchButton</source>
+        <translation type='unfinished'></translation>
+    </message>
+    <message>
+        <source>fileDispatchButton</source>
+        <translation type='unfinished'></translation>
+    </message>
+    <message>
         <source>Dispatch Mechanism</source>
-        <translation type='unfinished'></translation>
-    </message>
-    <message>
-        <source>Send via e-mail</source>
-        <translation type='unfinished'></translation>
-    </message>
-    <message>
-        <source>Save as Text File</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -147,7 +155,7 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>Choose File...</source>
+        <source>chooseFileButton</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -155,9 +163,7 @@
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>In this version of the QAgent software package, a previously installed copy of GNU Privacy Guard is required in order to encrypt your data.
-
-GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under the GNU General Public License.</source>
+        <source>noGPGLabel</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -173,7 +179,7 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
         <translation type='unfinished'></translation>
     </message>
     <message>
-        <source>I&apos;m sure!</source>
+        <source>sureCheckBox</source>
         <translation type='unfinished'></translation>
     </message>
     <message>
@@ -185,12 +191,20 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
         <translation type='unfinished'></translation>
     </message>
     <message>
+        <source>TextLabel2</source>
+        <translation type='unfinished'></translation>
+    </message>
+    <message>
         <source>Completion</source>
         <translation type='unfinished'></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
+    <message>
+        <source>qagentProgramName</source>
+        <translation type='unfinished'></translation>
+    </message>
     <message>
         <source>intro_text</source>
         <translation type='unfinished'></translation>
