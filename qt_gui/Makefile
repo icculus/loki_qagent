@@ -28,8 +28,8 @@ qmfiles: qagent_en.qm
 
 ############## BUILDS OF DOOM AND EVIL ###############
 
-X11_CPPFLAGS=-I$(QTX11DIR)/include
-X11_CFLAGS=-I$(QTX11DIR)/include
+X11_CPPFLAGS=-I$(QTX11DIR)/include -g
+X11_CFLAGS=-I$(QTX11DIR)/include -g
 
 X11_MOC=$(QTX11DIR)/bin/moc
 
@@ -74,8 +74,8 @@ build/:
 # PLEASE NOTE: This doesn't work yet. Fixing it IS on my list of things
 # to do....
 
-EMBEDDED_CPPFLAGS=-I$(QTEMBEDDEDDIR)/include
-EMBEDDED_CFLAGS=-I$(QTEMBEDDEDDIR)/include
+EMBEDDED_CPPFLAGS=-I$(QTEMBEDDEDDIR)/include -g
+EMBEDDED_CFLAGS=-I$(QTEMBEDDEDDIR)/include -g
 
 EMBEDDED_MOC=$(QTEMBEDDEDDIR)/bin/moc
 
