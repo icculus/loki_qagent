@@ -1,0 +1,41 @@
+<!ELEMENT qagent_report (header,fenris,rpmdump,
+gldump,hwdump,md5dump,netdump,procdump,stackdump,xinfo)>
+<!ELEMENT header (product_name,product_path,product_cdrom,product_version,product_desc,
+product_prefs, user_name,user_email,user_regno,user_comment)>
+<!ELEMENT product_name (#CDATA)>
+<!ELEMENT product_path (#CDATA)>
+<!ELEMENT product_cdrom (#CDATA)>
+<!ELEMENT product_version (#CDATA)>
+<!ELEMENT product_desc (#CDATA)>
+<!ELEMENT product_prefs (#CDATA)>
+<!ELEMENT user_name (#CDATA)>
+<!ELEMENT user_email (#CDATA)>
+<!ELEMENT user_regno (#CDATA)>
+<!ELEMENT user_comment (#CDATA)>
+<!ELEMENT fenris (fenris_login,fenris_password,fenris_bugtext)>
+<!ELEMENT fenris_login (#CDATA)>
+<!ELEMENT fenris_password (#CDATA)>
+<!ELEMENT fenris_bugtext (#CDATA)>
+<!ELEMENT rpmdump (#CDATA)>
+<!ELEMENT gldump (#CDATA)>
+<!ELEMENT hwdump (cpu,memory,bridge,ide,scsi,usb,harddisk,floppy,cdrom,videocard,
+ethernet,sound,mouse,joystick)>
+<!ELEMENT cpu (vendor,model,frequency,flags,bogomips,bugs)>
+<!ELEMENT memory (total,free,shared,buffers,cached,swap_free,swap_total)>
+<!ELEMENT bridge (bus,vendor,model,module)>
+<!ELEMENT ide (bus,vendor,model,module)>
+<!ELEMENT scsi (bus,vendor,model,module)>
+<!ELEMENT usb (bus,vendor,model,module)>
+<!ELEMENT harddisk (bus,vendor,model,device,size,heads,sectors,cylinders)>
+<!ELEMENT floppy (bus,vendor,model,device)>
+<!ELEMENT videocard (bus,vendor,model,server,memory,ramdac,clockchip)>
+<!ELEMENT ethernet (bus,vendor,model,module)>
+<!ELEMENT sound (bus,vendor,model,options,module)>
+<!ELEMENT mouse (bus,vendor,model,device)>
+<!ELEMENT joystick (bus,vendor,model,device,module)>
+
+
+
+
+
+

@@ -1,5 +1,7 @@
 01/05/00	Nicholas Vining		<mordred@lokigames.com>
 
+	* Started working on the DTD. Scary.
+	* Added the other/ directory to store the qagent DTD for those who want it.
 	* Launcher works. This meant pulling things out, removing other
 	  things, and dead poultry.
 
