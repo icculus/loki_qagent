@@ -39,7 +39,6 @@ x11_objects = \
 	build/x11/qagent.moc.o \
 	build/x11/qagent.o \
 	build/x11/utils.o \
-	build/x11/x_utils.o \
 	build/x11/main.o \
 	build/x11/qt_gui.o \
 	build/x11/KDE/kprocctrl.moc.o \
@@ -86,7 +85,6 @@ embedded_objects = \
 	build/embedded/qagent.moc.o \
 	build/embedded/qagent.o \
 	build/embedded/utils.o \
-	build/embedded/x_utils.o \
 	build/embedded/main.o \
 	build/embedded/qt_gui.o \
 	build/embedded/KDE/kprocctrl.moc.o \

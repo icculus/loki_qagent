@@ -27,6 +27,7 @@ all : 	$(BUILD_DIR) \
 	$(BUILD_DIR)/md5sum \
 	$(BUILD_DIR)/sidebar.png \
 	$(BUILD_DIR)/qagent.sh \
+	$(BUILD_DIR)/qagent \
 	$(BUILD_DIR)/rpmdump.sh \
 	$(BUILD_DIR)/stackdump.sh \
 	$(BUILD_DIR)/transport_file.sh \
@@ -63,6 +64,10 @@ $(SCRIPT_DIR)/encrypt_gpg.sh: $(SCRIPT_DIR)/gen_encrypt_gpg.sh host.def
 $(SCRIPT_DIR)/transport_mail.sh : $(SCRIPT_DIR)/gen_transport_mail.sh host.def
 	cd $(SCRIPT_DIR) && ./gen_transport_mail.sh && cd ..
 
+$(BUILD_DIR)/qagent: launch_shell/qagent
+	cd launch_shell && make && cd ..
+	cp $< $@
+
 $(BUILD_DIR)/%.qm : qt_gui/%.qm
 	cp $< $@
 
@@ -82,10 +87,6 @@ $(KEY_DIR)/$(KEY_NAME):
 	echo "WARNING: KEY NOT FOUND, TRYING TO CALL GENERATION SCRIPT"
 	cd $(KEY_DIR) && ./gen_key.sh cd ..
 	
-$(BUILD_DIR)/qagent: qt_gui/*.cpp qt_gui/*.h host.def
-	cd qt_gui && make qagent && cd ..
-	cp qt_gui/qagent build/ && cd ..
-
 $(BUILD_DIR)/qagent_x11: qt_gui/*.cpp qt_gui/*.h host.def
 	cd qt_gui && make x11 && cd ..
 	cp qt_gui/build/x11/qagent_x11 build/ && cd ..
