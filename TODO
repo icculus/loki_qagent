@@ -3,9 +3,7 @@ first. Getting a book on XML wouldn't hurt either.)
         -- finish Fenris support
         -- finish setupdb support (nearly there, but it seems to have
 broken in my absence)
-        -- internationalization support
         -- sidebar logo (192x384) (ask Jason)
         -- embedding sidebar logo in EXE?
-        -- Qt/Embedded, if it will work...
         -- various code cleanup items (Makefile clean up, build process
 cleanup, etc.)
