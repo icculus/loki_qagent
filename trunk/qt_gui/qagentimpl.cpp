@@ -283,7 +283,7 @@ void qagentImpl::next ( void )
 		if (pageOn == QAGENT_PRODUCT_PAGE)
 		{
 #ifndef ENABLE_SETUPDB
-			jumpTo(QAGENT_SCAN_PAGE)
+			jumpTo(QAGENT_SCAN_PAGE);
 #endif
 		}
 	

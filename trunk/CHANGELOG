@@ -1,3 +1,13 @@
+12/19/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* After a few failed tries and several experimentation, we now
+	  have the start of the new makefile system. Nowhere near done yet,
+	  but it's certainly an improvement.
+
+12/18/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* More makefile insanity.
+
 12/14/00	Nicholas Vining		<mordred@lokigames.com>
 
 	* Work on support for both Qt/Embedded and Qt/X11. First, we need to 
