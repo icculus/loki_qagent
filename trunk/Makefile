@@ -65,8 +65,10 @@ $(SCRIPT_DIR)/transport_mail.sh : $(SCRIPT_DIR)/gen_transport_mail.sh host.def
 	cd $(SCRIPT_DIR) && ./gen_transport_mail.sh && cd ..
 
 $(BUILD_DIR)/qagent: launch_shell/qagent
-	cd launch_shell && make && cd ..
 	cp $< $@
+
+launch_shell/qagent : launch_shell/*.cpp
+	cd launch_shell && make && cd ..
 
 $(BUILD_DIR)/%.qm : qt_gui/%.qm
 	cp $< $@

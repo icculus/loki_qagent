@@ -184,10 +184,15 @@ void qagentImpl::jumpTo ( int pageNo )
 
 	if (pageOn < pageNo)
 	{
-		for (i = pageOn; i < pageNo; i++)
+		for (i = pageOn; i < pageNo-1; i++)
 		{
 			QWizard::next();
 		}
+
+// Only trigger event on target page
+
+		next();
+
 	}
 	else if (pageOn == pageNo)
 	{
@@ -195,10 +200,11 @@ void qagentImpl::jumpTo ( int pageNo )
 	}
 	else if (pageOn > pageNo)
 	{
-		for (i = pageOn; i > pageNo; i--)
+		for (i = pageOn; i > pageNo+1; i--)
 		{
 			QWizard::back();
 		}
+		back();
 	}
 	pageOn = pageNo;
 }

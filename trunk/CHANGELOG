@@ -1,5 +1,15 @@
+01/07/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* jumping bug: qagentImpl::jumpTo won't generate new events?
+		* UPDATE: Fixed, I think, but we may want to only trigger
+		  the destination event?
+		* UPDATE: Fixed again. 
+
 01/05/00	Nicholas Vining		<mordred@lokigames.com>
 
+	* Ooops.. fixed the core Makefile so that we will properly build the
+		launch_shell/qagent if it's not there.
+	* First draft DTD complete.
 	* Started working on the DTD. Scary.
 	* Added the other/ directory to store the qagent DTD for those who want it.
 	* Launcher works. This meant pulling things out, removing other
