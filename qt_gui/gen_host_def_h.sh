@@ -19,18 +19,8 @@ echo "#define __HOST_DEF_H" >> host_def.h
 echo "" >> host_def.h
 
 echo "#define _GEN_HOSTDEF_SUPPORT_EMAIL \"$support_email\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_PROGRAM_NAME \"$program_name\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_DEFAULT_TITLE \"$default_title\"" >> host_def.h
 echo "#define _GEN_HOSTDEF_KEY_FILE \"$publickeyfile\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_PROGRAM_INTRO_TEXT \"$program_intro_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_SCAN_TEXT \"$scan_system_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_DESCRIBE_FINDINGS_TEXT \"$describe_findings_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_USER_COMMENT_TEXT \"$user_comment_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_CONTACT_INFO_TEXT \"$contact_info_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_DISPATCH_MECHANISM_TEXT \"$dispatch_mechanism_text\"" >> host_def.h
-echo "#define _GEN_HOSTDEF_FINAL_CHECK_TEXT \"$final_check_text\"" >> host_def.h
 
-echo "#define _GEN_HOSTDEF_PRIVACY_TITLE \"$privacy_dialog_title\"" >> host_def.h
 echo "#define _GEN_HOSTDEF_SUPPORT_DIRECTORY \"$support_directory\"" >> host_def.h
 echo "#define _GEN_HOSTDEF_SIDEBAR_PIXMAP \"$sidebar_pixmap\"" >> host_def.h
 

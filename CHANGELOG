@@ -1,5 +1,6 @@
 12/06/00	Nicholas Vining		<mordred@lokigames.com>
 
+	* Removed extraneous ick from host.def.
 	* Changed a whole whack of text around in the .ui file. Too many
 	  to list, but all widgets now have more or less clear names.
 	* Purchased 96 cans of Coke. Some may question the relevance, 

@@ -47,7 +47,7 @@ qagentImpl::qagentImpl( QWidget* parent,  const char* name, bool modal, WFlags f
 
 // Set the caption..
 
-	setCaption(QObject::tr(_GEN_HOSTDEF_PROGRAM_NAME));
+	setCaption(QObject::tr("qagentProgramName"));
 
 	dispatchMechanismState = DISPATCH_MAIL;
 
