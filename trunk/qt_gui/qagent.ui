@@ -185,11 +185,11 @@
                 <class>QLabel</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>TextLabel1_2</cstring>
+                    <cstring>choosePathLabel</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>TextLabel1</string>
+                    <string>choosePathLabel</string>
                 </property>
             </widget>
             <spacer row="1"  column="1" >
@@ -217,11 +217,11 @@
                 <class>QButtonGroup</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>ButtonGroup2</cstring>
+                    <cstring>pathButtonGroup</cstring>
                 </property>
                 <property stdset="1">
                     <name>title</name>
-                    <string>ButtonGroup2</string>
+                    <string>pathButtonGroup</string>
                 </property>
                 <vbox>
                     <property stdset="1">
@@ -247,11 +247,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel2_2</cstring>
+                            <cstring>standardPathLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>TextLabel2</string>
+                            <string>standardPathLabel</string>
                         </property>
                     </widget>
                     <widget>
@@ -269,11 +269,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel3</cstring>
+                            <cstring>advancedPathLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>TextLabel3</string>
+                            <string>advancedPathLabel</string>
                         </property>
                     </widget>
                 </vbox>
@@ -303,11 +303,11 @@
                 <class>QLabel</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>TextLabel4</cstring>
+                    <cstring>pressNextLabel</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>TextLabel4</string>
+                    <string>pressNextLabel</string>
                 </property>
             </widget>
         </grid>
@@ -399,11 +399,11 @@
                 <class>QLabel</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>TextLabel1</cstring>
+                    <cstring>chooseProductLabel</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>TextLabel1</string>
+                    <string>chooseProductLabel</string>
                 </property>
             </widget>
             <spacer row="1"  column="1" >
@@ -834,7 +834,7 @@
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>E-mail Address</string>
+                    <string>emailAddressLabel</string>
                 </property>
             </widget>
             <widget row="5"  column="1" >
@@ -852,7 +852,7 @@
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>Registration Number (optional)</string>
+                    <string>regNoLabel</string>
                 </property>
             </widget>
             <widget row="7"  column="1" >
@@ -870,7 +870,7 @@
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>Full Name</string>
+                    <string>fullNameLabel</string>
                 </property>
             </widget>
             <spacer row="1"  column="1" >
@@ -1004,7 +1004,7 @@
                 <class>QLabel</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>TextLabel11</cstring>
+                    <cstring>useFenrisLabel</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
@@ -1052,11 +1052,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel12</cstring>
+                            <cstring>fenrisLoginLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>Login</string>
+                            <string>fenrisLoginLabel</string>
                         </property>
                         <property stdset="1">
                             <name>enabled</name>
@@ -1078,11 +1078,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel13</cstring>
+                            <cstring>fenrisPasswordLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>Password</string>
+                            <string>fenrisPasswordLabel</string>
                         </property>
                         <property stdset="1">
                             <name>enabled</name>
@@ -1104,11 +1104,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel14</cstring>
+                            <cstring>fenrisBugTextLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>Description of Bug</string>
+                            <string>fenrisBugTextLabel</string>
                         </property>
                         <property stdset="1">
                             <name>enabled</name>
@@ -1130,11 +1130,11 @@
                         <class>QLabel</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>TextLabel15</cstring>
+                            <cstring>fenrisInfoLabel</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>To obtain a Fenris login and password, please visit http://fenris.lokigames.com</string>
+                            <string>fenrisInfoLabel</string>
                         </property>
                         <property stdset="1">
                             <name>alignment</name>
@@ -1154,7 +1154,7 @@
                 <class>QCheckBox</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>CheckBox9</cstring>
+                    <cstring>useFenrisCheckBox</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
@@ -1190,7 +1190,7 @@
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>Use Encryption (requires GNU Privacy Guard)</string>
+                    <string>gpgCheckBox</string>
                 </property>
             </widget>
             <widget row="0"  column="0"  rowspan="3"  colspan="1" >
@@ -1261,11 +1261,11 @@
                 <class>QButtonGroup</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>ButtonGroup1</cstring>
+                    <cstring>dispatchMechanismGroup</cstring>
                 </property>
                 <property stdset="1">
                     <name>title</name>
-                    <string>Dispatch Mechanism</string>
+                    <string>dispatchMechanismGroup</string>
                 </property>
                 <vbox>
                     <property stdset="1">
@@ -1284,7 +1284,7 @@
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>Send via e-mail</string>
+                            <string>emailDispatchButton</string>
                         </property>
                         <property stdset="1">
                             <name>checked</name>
@@ -1295,11 +1295,11 @@
                         <class>QRadioButton</class>
                         <property stdset="1">
                             <name>name</name>
-                            <cstring>dumpDispatchButton</cstring>
+                            <cstring>fileDispatchButton</cstring>
                         </property>
                         <property stdset="1">
                             <name>text</name>
-                            <string>Save as Text File</string>
+                            <string>fileDispatchButton</string>
                         </property>
                     </widget>
                 </vbox>
@@ -1446,7 +1446,7 @@
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>Choose File...</string>
+                    <string>chooseFileButton</string>
                 </property>
                 <property stdset="1">
                     <name>sizePolicy</name>
@@ -1517,13 +1517,11 @@
                 <class>QLabel</class>
                 <property stdset="1">
                     <name>name</name>
-                    <cstring>TextLabel8</cstring>
+                    <cstring>noGPGLabel</cstring>
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>In this version of the QAgent software package, a previously installed copy of GNU Privacy Guard is required in order to encrypt your data.
-
-GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under the GNU General Public License.</string>
+                    <string>noGPGLabel</string>
                 </property>
                 <property stdset="1">
                     <name>alignment</name>
@@ -1697,7 +1695,7 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
                 </property>
                 <property stdset="1">
                     <name>text</name>
-                    <string>I'm sure!</string>
+                    <string>sureCheckBox</string>
                 </property>
             </widget>
             <spacer row="2"  column="1" >
@@ -1890,7 +1888,7 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
         <slot>dataChanged(const QString &amp;)</slot>
     </connection>
     <connection>
-        <sender>ButtonGroup1</sender>
+        <sender>dispatchMechanismGroup</sender>
         <signal>clicked(int)</signal>
         <receiver>QAgent</receiver>
         <slot>dispatchMechanismChanged()</slot>
@@ -1908,7 +1906,7 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
         <slot>gpgBoxChanged()</slot>
     </connection>
     <connection>
-        <sender>ButtonGroup2</sender>
+        <sender>pathButtonGroup</sender>
         <signal>clicked(int)</signal>
         <receiver>QAgent</receiver>
         <slot>pathChanged()</slot>

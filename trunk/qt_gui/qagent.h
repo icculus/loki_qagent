@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Form interface generated from reading ui file 'qagent.ui'
 **
-** Created: Tue Nov 28 18:15:49 2000
+** Created: Wed Dec 6 15:51:36 2000
 **      by:  The User Interface Compiler (uic)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -39,17 +39,17 @@ public:
     QLabel* introTextLabel;
     QWidget* Widget13;
     QLabel* PixmapLabel1_2_2_2_2_2_2_2_2_2_2_3;
-    QLabel* TextLabel1_2;
-    QButtonGroup* ButtonGroup2;
+    QLabel* choosePathLabel;
+    QButtonGroup* pathButtonGroup;
     QRadioButton* standardPathButton;
-    QLabel* TextLabel2_2;
+    QLabel* standardPathLabel;
     QRadioButton* advancedPathButton;
-    QLabel* TextLabel3;
-    QLabel* TextLabel4;
+    QLabel* advancedPathLabel;
+    QLabel* pressNextLabel;
     QWidget* Widget12;
     QLabel* PixmapLabel1_2_2_2_2_2_2_2_2_2_2_2;
     QComboBox* productComboBox;
-    QLabel* TextLabel1;
+    QLabel* chooseProductLabel;
     QWidget* Widget3;
     QLabel* PixmapLabel1_2;
     QProgressBar* scanProgressBar;
@@ -73,23 +73,23 @@ public:
     QLabel* contactInfoLabel;
     QWidget* Widget14;
     QLabel* PixmapLabel1_2_2_2_2_2_2_2_2_2_2_3_2;
-    QLabel* TextLabel11;
+    QLabel* useFenrisLabel;
     QFrame* Frame3;
-    QLabel* TextLabel12;
+    QLabel* fenrisLoginLabel;
     QLineEdit* LineEdit15;
-    QLabel* TextLabel13;
+    QLabel* fenrisPasswordLabel;
     QLineEdit* LineEdit16;
-    QLabel* TextLabel14;
+    QLabel* fenrisBugTextLabel;
     QMultiLineEdit* MultiLineEdit11;
-    QLabel* TextLabel15;
-    QCheckBox* CheckBox9;
+    QLabel* fenrisInfoLabel;
+    QCheckBox* useFenrisCheckBox;
     QWidget* Widget6;
     QCheckBox* gpgCheckBox;
     QLabel* PixmapLabel1_2_2_2_2;
     QLabel* dispatchMechanismLabel;
-    QButtonGroup* ButtonGroup1;
+    QButtonGroup* dispatchMechanismGroup;
     QRadioButton* emailDispatchButton;
-    QRadioButton* dumpDispatchButton;
+    QRadioButton* fileDispatchButton;
     QWidget* Widget9;
     QLabel* PixmapLabel1_2_2_2_2_2_2_2;
     QLineEdit* dumpFileEdit;
@@ -97,7 +97,7 @@ public:
     QPushButton* chooseFileButton;
     QWidget* Widget8;
     QLabel* PixmapLabel1_2_2_2_2_2_2;
-    QLabel* TextLabel8;
+    QLabel* noGPGLabel;
     QWidget* Widget12_2;
     QLabel* PixmapLabel1_2_2_2_2_2_2_2_2;
     QLabel* privacyLabel;
@@ -122,7 +122,7 @@ public slots:
 protected:
     QGridLayout* Widget2Layout;
     QGridLayout* Widget13Layout;
-    QVBoxLayout* ButtonGroup2Layout;
+    QVBoxLayout* pathButtonGroupLayout;
     QGridLayout* Widget12Layout;
     QGridLayout* Widget3Layout;
     QGridLayout* Widget4Layout;
@@ -131,7 +131,7 @@ protected:
     QGridLayout* Widget14Layout;
     QGridLayout* Frame3Layout;
     QGridLayout* Widget6Layout;
-    QVBoxLayout* ButtonGroup1Layout;
+    QVBoxLayout* dispatchMechanismGroupLayout;
     QGridLayout* Widget9Layout;
     QGridLayout* Widget8Layout;
     QGridLayout* Widget12Layout_2;
