@@ -1,3 +1,6 @@
+12/06/00:
+	-- added first stirrings of internationalization support
+
 11/28/00:
 	-- after a very long absence, got back on QAgent again
 	-- fixed it to work with Qt 2.2.2 (I don't know, looks like
