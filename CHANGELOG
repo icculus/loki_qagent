@@ -1,5 +1,10 @@
 12/06/00	Nicholas Vining		<mordred@lokigames.com>
-
+	
+	* added Makefile mojo to generate, build, and clean Makefiles. We
+	  should be able to derive a list of translated files from a
+	  central location at some point, but I'd rather get just one
+	  working first.
+	* load qagent_en.qm	
 	* Removed extraneous ick from host.def.
 	* Changed a whole whack of text around in the .ui file. Too many
 	  to list, but all widgets now have more or less clear names.

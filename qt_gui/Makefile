@@ -2,6 +2,10 @@ include ../host.def
 
 uifiles = qagent.ui
 
+# Localization files.
+
+qmfiles = qagent_en.qm
+
 gen_hdrs = $(uifiles:.ui=.h)
 gen_srcs = $(uifiles:.ui=.cpp)
 
@@ -47,7 +51,7 @@ endif
 
 .PRECIOUS: %.h %.moc.cpp %.cpp %impl.h %impl.cpp
 
-qagent : $(objects)
+qagent : $(objects) $(qmfiles)
 	$(CPP) -pipe -g -o qagent $(objects) $(LIBFLAGS)
 
 %.moc.cpp: %.h
@@ -58,6 +62,9 @@ qagent : $(objects)
 
 %.o : %.cpp host_def.h
 	$(CPP) -c $(CPPFLAGS) $< -o $@
+
+%.qm : %.ts qagent.pro
+	lrelease qagent.pro
 
 %.moc.cpp: %.h
 	$(MOC) -o $@ $<
@@ -71,11 +78,13 @@ host_def.h: ../host.def
 %.cpp : %.ui %.h
 	$(UIC) -i $(<:.ui=.h) -o $@ $<
 
+qmfiles:
+	lrelease qagent.pro
 clean:
-	rm qagent $(objects) $(gen_srcs) host_def.h
+	rm qagent $(objects) $(gen_srcs) host_def.h $(qmfiles)
 
 real-clean:
-	rm qagent $(objects) $(moc_srcs) host_def.h
+	rm qagent $(objects) $(moc_srcs) host_def.h $(qmfiles)
 
 # Be VERY careful with these guys if you choose to uncomment them;
 # they basically give Make the power to fsck you over. I will not

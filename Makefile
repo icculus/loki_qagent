@@ -17,6 +17,7 @@ KEY_NAME = yoyodyne_key.pub
 all : 	$(BUILD_DIR) \
 	$(BUILD_DIR)/lst \
 	$(BUILD_DIR)/detect \
+	$(BUILD_DIR)/qagent_en.qm \
 	$(BUILD_DIR)/encrypt_gpg.sh \
 	$(BUILD_DIR)/gldump.sh \
 	$(BUILD_DIR)/hwdump.sh \
@@ -41,6 +42,8 @@ $(BUILD_DIR):
 #FIXME: file name should be declared in host.def.
 #FIXME: do we care?
 
+.PRECIOUS : qt_gui/%.qm
+
 $(BUILD_DIR)/sidebar.png : data/sidebar.png
 	cp data/sidebar.png $(BUILD_DIR)/sidebar.png
 
@@ -59,6 +62,12 @@ $(SCRIPT_DIR)/encrypt_gpg.sh: $(SCRIPT_DIR)/gen_encrypt_gpg.sh host.def
 
 $(SCRIPT_DIR)/transport_mail.sh : $(SCRIPT_DIR)/gen_transport_mail.sh host.def
 	cd $(SCRIPT_DIR) && ./gen_transport_mail.sh && cd ..
+
+$(BUILD_DIR)/%.qm : qt_gui/%.qm
+	cp $< $@
+
+qt_gui/%.qm : qt_gui/%.ts
+	cd qt_gui && make qmfiles && cd ..
 
 $(BUILD_DIR)/%.sh : $(SCRIPT_DIR)/%.sh
 	cp $< $@
