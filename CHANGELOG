@@ -1,7 +1,12 @@
+12/07/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* More makefile tweaks. Removed old bogus translation code -- we
+	  don't REALLY need to specify everything by hand.
+
 12/06/00	Nicholas Vining		<mordred@lokigames.com>
 	
-	* added Makefile mojo to generate, build, and clean Makefiles. We
-	  should be able to derive a list of translated files from a
+	* added Makefile mojo to generate, build, and clean translated files. 
+	  We should be able to derive a list of translated files from a
 	  central location at some point, but I'd rather get just one
 	  working first.
 	* load qagent_en.qm	

@@ -80,6 +80,8 @@ host_def.h: ../host.def
 
 qmfiles:
 	lrelease qagent.pro
+tsfiles:
+	lupdate qagent.pro
 clean:
 	rm qagent $(objects) $(gen_srcs) host_def.h $(qmfiles)
 

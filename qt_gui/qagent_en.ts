@@ -203,35 +203,23 @@
     <name>QObject</name>
     <message>
         <source>qagentProgramName</source>
-        <translation type='unfinished'></translation>
+        <translation type='unfinished'>Loki QAgent</translation>
     </message>
     <message>
-        <source>intro_text</source>
-        <translation type='unfinished'></translation>
+        <source>back button</source>
+        <translation type='unfinished'>Back</translation>
     </message>
     <message>
-        <source>scan_text</source>
-        <translation type='unfinished'></translation>
+        <source>next button</source>
+        <translation type='unfinished'>Next</translation>
     </message>
     <message>
-        <source>findings_text</source>
-        <translation type='unfinished'></translation>
+        <source>finish button</source>
+        <translation type='unfinished'>Finish</translation>
     </message>
     <message>
-        <source>usercomment_text</source>
-        <translation type='unfinished'></translation>
-    </message>
-    <message>
-        <source>dispatch_mechanism_text</source>
-        <translation type='unfinished'></translation>
-    </message>
-    <message>
-        <source>contact_info_text</source>
-        <translation type='unfinished'></translation>
-    </message>
-    <message>
-        <source>final_check_text</source>
-        <translation type='unfinished'></translation>
+        <source>cancel button</source>
+        <translation type='unfinished'>Cancel</translation>
     </message>
 </context>
 </TS>

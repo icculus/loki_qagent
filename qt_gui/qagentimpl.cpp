@@ -15,6 +15,7 @@
 #include <qcheckbox.h>
 #include <qfiledialog.h>
 #include <qwizard.h>
+#include <qgroupbox.h>
 #include <qradiobutton.h>
 #include <qpushbutton.h>
 #include <qmultilineedit.h>
@@ -59,14 +60,13 @@ qagentImpl::qagentImpl( QWidget* parent,  const char* name, bool modal, WFlags f
 	scanProgressBar->setTotalSteps(totalProgressCounters);
 	scanProgressBar->setProgress(0); // otherwise we segfault...
 
-	introTextLabel->setText(QObject::tr("intro_text"));
-	scanningTextLabel->setText(QObject::tr("scan_text"));
-	describeFindingsLabel->setText(QObject::tr("findings_text"));
-	userCommentLabel->setText(QObject::tr("usercomment_text"));	
-	dispatchMechanismLabel->setText(QObject::tr("dispatch_mechanism_text"));
-	contactInfoLabel->setText(QObject::tr("contact_info_text"));
-	finalCheckLabel->setText(QObject::tr("final_check_text"));
-	dumpFileEdit->setText(QString::QString(home)+QString::fromLatin1("/qagent.txt"));
+// Set everything for translation that doesn't get picked up automatically
+// by lupdate. 
+
+	backButton()->setText(QObject::tr("back button"));
+	nextButton()->setText(QObject::tr("next button"));
+	finishButton()->setText(QObject::tr("finish button"));
+	cancelButton()->setText(QObject::tr("cancel button"));
 
 	FILE *fp = fopen((QString::fromLatin1(work_dir)+QString::fromLatin1("/privacy.txt")),"rt");
 	char *line = NULL;
