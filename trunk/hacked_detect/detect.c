@@ -1,4 +1,5 @@
 // An unabashed hack of Mandrake's detect.c. Blggggphbbt. -- n.
+// Later modified to dump XML. Even MORE Blggggphbbt. -- n.
 
 #include <stdio.h>
 #include <string.h>
@@ -67,7 +68,7 @@ int main ( void ) {
   /* report CPU(s)                                                    */
   /********************************************************************/
   if(((cpu = cpu_detect()) != NULL) && (verbose == 1)){
-    fprintf(report, "# %s:%s:%s:%s:[%s]:%s:%s\n",
+/*    fprintf(report, "# %s:%s:%s:%s:[%s]:%s:%s\n",
             ToUpper(device2str(CPU)),
             _("vendor"),
             _("model"),
@@ -75,9 +76,21 @@ int main ( void ) {
             _("flags"),
             _("bogomips"),
             _("bugs"));
+*/
+	fprintf (report, 
+		"<cpu>\n<name>%s</name>\n<vendor>%s</vendor>\n<model>%s</model>\n<frequency>%i</frequency>\n<flags>%s</flags>\n<bogomips>%s</bogomips>\n<bugs>%s</bugs>\n</cpu>\n",
+            ToUpper(device2str(CPU)),
+            _("vendor"),
+            _("model"),
+            _("frequency"),
+            _("flags"),
+            _("bogomips"),
+            _("bugs"));
+
   }/*endif*/
   for(; cpu; cpu = cpu->next){
-    fprintf(report, "%s:%s:%s:%d:%s:%s:%s\n",
+	fprintf (report, 
+		"<cpu>\n<name>%s</name>\n<vendor>%s</vendor>\n<model>%s</model>\n<frequency>%i</frequency>\n<flags>%s</flags>\n<bogomips>%s</bogomips>\n<bugs>%s</bugs>\n</cpu>\n",
             ToUpper(device2str(CPU)),
             cpu->vendor, 
             cpu->model, 
@@ -90,20 +103,9 @@ int main ( void ) {
   /********************************************************************/
   /* report memory                                                    */
   /********************************************************************/
-  if(verbose == 1){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(MEMORY)),
-            _("total"),
-            _("free"),
-            _("shared"),
-            _("buffers"),
-            _("cached"),
-            _("free_swap"),
-            _("total_swap"));
-  }/*endif*/
   memory = memory_detect();
-  fprintf(report, "%s:%d:%d:%d:%d:%d:%d:%d\n", 
-          ToUpper(device2str(MEMORY)),
+  fprintf(report, 
+  "<memory>\n<total>%d</total>\n<free>%d</free>\n<shared>%d</shared>\n<buffers>%d</buffers>\n<cached>%d</cached>\n<swap_free>%d</swap_free>\n<swap_total>%d</swap_total>\n</memory>\n",
           memory->total, 
           memory->free, 
           memory->shared, 
@@ -118,16 +120,16 @@ int main ( void ) {
   /********************************************************************/
   if(((bridge = bridge_detect(bus)) != NULL) && 
      (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(BRIDGE)),
+    fprintf(report,
+     "<bridge><bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</bridge>\n", 
             _("bus"),
             _("vendor"),
             _("model"),
             _("module"));
   }/*endif*/
   for(; bridge; bridge = bridge->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n",
-            ToUpper(device2str(BRIDGE)),
+    fprintf(report,
+     "<bridge><bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</bridge>\n", 
             bus2str(bridge->bus), 
             bridge->vendor, 
             bridge->model,
@@ -141,7 +143,7 @@ int main ( void ) {
   /********************************************************************/
   if(((ideinterface = ideinterface_detect(bus)) != NULL) && 
      (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
+    fprintf(report, "<ide>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</ide>\n", 
             ToUpper(device2str(IDEINTERFACE)),
             _("bus"),
             _("vendor"),
@@ -149,7 +151,7 @@ int main ( void ) {
             _("module"));
   }/*endif*/
   for(; ideinterface; ideinterface = ideinterface->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n",
+    fprintf(report, "<ide>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</ide>\n", 
             ToUpper(device2str(IDEINTERFACE)),
             bus2str(ideinterface->bus), 
             ideinterface->vendor, 
@@ -162,16 +164,14 @@ int main ( void ) {
   /********************************************************************/
   if(((scsiinterface = scsiinterface_detect(bus)) != NULL) && 
                                                         (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(SCSIINTERFACE)),
+    fprintf(report, "<scsi>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</scsi>\n", 
             _("bus"),
             _("vendor"),
             _("model"),
             _("module"));
   }/*endif*/
   for(; scsiinterface; scsiinterface = scsiinterface->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n",
-            ToUpper(device2str(SCSIINTERFACE)),
+    fprintf(report, "<scsi>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</scsi>\n", 
             bus2str(scsiinterface->bus), 
             scsiinterface->vendor, 
             scsiinterface->model,
@@ -183,16 +183,14 @@ int main ( void ) {
   /********************************************************************/
   if(((usbinterface = usbinterface_detect(bus)) != NULL) && 
                                                         (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(USBINTERFACE)),
+    fprintf(report, "<usb>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</usb>\n", 
             _("bus"),
             _("vendor"),
             _("model"),
             _("module"));
   }/*endif*/
   for(; usbinterface; usbinterface = usbinterface->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n",
-            ToUpper(device2str(USBINTERFACE)),
+    fprintf(report, "<usb>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</usb>\n", 
             bus2str(usbinterface->bus), 
             usbinterface->vendor, 
             usbinterface->model,
@@ -203,8 +201,7 @@ int main ( void ) {
   /* report hard disk(s)                                              */
   /********************************************************************/
   if(((disk = disk_detect(bus)) != NULL) &&(verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(DISK)),
+	fprintf(report,"<harddisk>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<device>%s</device>\n<size>%s</size>\n<heads>%i</heads>\n<sectors>%i</sectors>\n<cylinders>%i</cylinders>\n</harddisk>\n",
             _("bus"),
             _("vendor"),
             _("model"),
@@ -215,7 +212,7 @@ int main ( void ) {
             _("cylinders"));
   }/*endif*/
   for(; disk; disk = disk->next){
-    fprintf(report, "%s:%s:%s:%s:%s:%d:%d:%d:%d\n", 
+	fprintf(report,"<harddisk>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<device>%s</device>\n<size>%s</size>\n<heads>%i</heads>\n<sectors>%i</sectors>\n<cylinders>%i</cylinders>\n</harddisk>\n",
             ToUpper(device2str(DISK)),
             bus2str(disk->bus),
             disk->vendor,
@@ -230,17 +227,8 @@ int main ( void ) {
   /********************************************************************/
   /* report flopy disk drive(s)                                       */
   /********************************************************************/
-  if(((floppy = floppy_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(FLOPPY)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
   for(; floppy; floppy = floppy->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(FLOPPY)),
+	fprintf(report,"<floppy>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<device>%s</device>\n</floppy>\n",
             bus2str(floppy->bus), 
             floppy->vendor, 
             floppy->model, 
@@ -250,102 +238,23 @@ int main ( void ) {
   /********************************************************************/
   /* report CD drive(s)                                               */
   /********************************************************************/
-  if(((cdrom = cdrom_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(CDROM)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
+ if ((cdrom = cdrom_detect(bus)) != NULL)
+ {
   for(; cdrom; cdrom = cdrom->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(CDROM)),
+	fprintf(report,"<cdrom>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<device>%s</device>\n</cdrom>\n",
             bus2str(cdrom->bus),
             cdrom->vendor,
             cdrom->model,
             cdrom->device);
   }/*next cdrom*/
-  
-  /********************************************************************/
-  /* report tape(s)                                                   */
-  /********************************************************************/
-  if(((tape = tape_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(TAPE)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
-  for(; tape; tape = tape->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(TAPE)),
-            bus2str(tape->bus),
-            tape->vendor,
-            tape->model,
-            tape->device);
-  }/*next tape*/
-  
-  /********************************************************************/
-  /* report scanner                                                   */
-  /********************************************************************/
-  if(((scanner = scanner_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(SCANNER)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
-  for(; scanner; scanner = scanner->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(SCANNER)),
-            bus2str(scanner->bus),
-            scanner->vendor,
-            scanner->model,
-           scanner->device);
-  }/*next scanner*/
-  
-
-  /********************************************************************/
-  /* report webcam(s)                                                 */
-  /********************************************************************/
-  if(((webcam = webcam_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(WEBCAM)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
-  for(; webcam; webcam = webcam->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(WEBCAM)),
-            bus2str(webcam->bus),
-            webcam->vendor,
-            webcam->model,
-            webcam->device);
-  }/*next webcam*/
-
-
+ } 
   /********************************************************************/
   /* report video card(s)                                             */
   /********************************************************************/
-  if(((video = video_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(VIDEOCARD)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("server"),
-            _("memory"),
-            _("ramdac"),
-            _("clockchip"));
-  }/*endif*/
+  if((video = video_detect(bus)) != NULL)
+  {
   for(; video; video = video->next){
-    fprintf(report, "%s:%s:%s:%s:[%s]:%d:%s:%s\n", 
-            ToUpper(device2str(VIDEOCARD)),
+	fprintf(report,"<videocard>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<server>%s</server>\n<memory>%d</memory>\n<ramdac>%s</ramdac>\n<clock>%s</clock>\n</videocard>\n",
             bus2str(video->bus), 
             video->vendor, 
             video->model,
@@ -354,68 +263,34 @@ int main ( void ) {
             video->ramdac,
             video->clockchip);
   }/*next video*/
-  
+  }  
   /********************************************************************/
   /* report ethernet card(s)                                          */
   /********************************************************************/
-  if(((ethernet = ethernet_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(ETHERNETCARD)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("module"));
-  }/*endif*/
+  if((ethernet = ethernet_detect(bus)) != NULL)
+  {
   for(; ethernet; ethernet = ethernet->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(ETHERNETCARD)),
+	fprintf(report,"<ethernet>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<module>%s</module>\n</ethernet>\n",
             bus2str(ethernet->bus), 
             ethernet->vendor, 
             ethernet->model,
             ethernet->module);
   }/*next ethernet*/
-  
+  }
   /********************************************************************/
   /* report sound card(s)                                             */
   /********************************************************************/
-  if(((sound = soundcard_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:[%s]:%s\n", 
-            ToUpper(device2str(SOUNDCARD)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("flags"),
-            _("module"));
-  }/*endif*/
-  for(; sound; sound = sound->next){
-    fprintf(report, "%s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(SOUNDCARD)),
+  if((sound = soundcard_detect(bus)) != NULL)
+  {
+   for(; sound; sound = sound->next){
+	fprintf(report,"<sound>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<options>%s</options>\n</sound>\n",
             bus2str(sound->bus),  
             sound->vendor, 
             sound->model, 
             options2str(sound->options),
             sound->module);
   }/*next sound*/
-  
-  /********************************************************************/
-  /* report tvcards                                                   */
-  /********************************************************************/
-  if(((tvcard = tvcard_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(TVCARD)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("module"));
-  }/*endif*/
-  for(; tvcard; tvcard = tvcard->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(TVCARD)),
-            bus2str(tvcard->bus),
-            tvcard->vendor,
-            tvcard->model,
-            tvcard->module);
-  }/*next tvcard*/
+  }
   
   /********************************************************************/
   /* report mices                                                     */

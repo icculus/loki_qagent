@@ -1,4 +1,8 @@
 12/19/00	Nicholas Vining		<mordred@lokigames.com>
+	
+	* The hacked detect now speaks XML.
+	* Fixes, anon.
+		FIXME: Qt/Embedded version still does not compile.
 
 	* After a few failed tries and several experimentation, we now
 	  have the start of the new makefile system. Nowhere near done yet,
