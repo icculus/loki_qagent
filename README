@@ -1,0 +1,18 @@
+This isn't a README so much as an apology. I wrote this mess while I was at
+Loki; it was later to be part of something slightly larger, a GL Setup
+program for Linux, perhaps, and through a series of confusions, 
+misunderstandings, downscalings, upscalings, reroutings, and "dump it on the 
+intern", I ended up penning this.
+
+Do what you want with it; I doubt very much that it actually will serve
+any actual useful purpose to anybody. I haven't even tried it with the
+latest Qt sources yet, and I sort of suspect that if it's like moving from
+2.1 to 2.2 was, there will be breakage, panic in the streets, and probably
+locusts. The only really good thing in this package is probably the qt_dir/ 
+Makefile, which, if you're trying to use Qt for a project, will solve a lot 
+of your problems later on.
+
+Cheers,
+
+Nicholas Vining
+mordred@icculus.org
