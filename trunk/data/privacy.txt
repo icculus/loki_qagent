@@ -1,0 +1,8 @@
+Loki Entertainment Software Privacy Policy
+
+There will, at some point, be a privacy policy here. When it arrives it will be stored as a word wrapped text file with no newline characters except in those places especially specified.
+
+This is just a test file.
+
+And there should REALLY be a flag to turn off this stuff as well at compile
+time... Nnngh! Mmnkgph.
