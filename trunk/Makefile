@@ -42,7 +42,7 @@ $(BUILD_DIR):
 #FIXME: file name should be declared in host.def.
 #FIXME: do we care?
 
-.PRECIOUS : qt_gui/%.qm
+.PRECIOUS : qt_gui/%.qm qt_gui/%.ts
 
 $(BUILD_DIR)/sidebar.png : data/sidebar.png
 	cp data/sidebar.png $(BUILD_DIR)/sidebar.png
@@ -68,6 +68,9 @@ $(BUILD_DIR)/%.qm : qt_gui/%.qm
 
 qt_gui/%.qm : qt_gui/%.ts
 	cd qt_gui && make qmfiles && cd ..
+
+qt_gui/%.ts :
+	cd qt_gui && make tsfiles && cd ..
 
 $(BUILD_DIR)/%.sh : $(SCRIPT_DIR)/%.sh
 	cp $< $@
