@@ -1,281 +1,320 @@
-12/06/00:
-	-- added first stirrings of internationalization support
+12/06/00	Nicholas Vining		<mordred@lokigames.com>
 
-11/28/00:
-	-- after a very long absence, got back on QAgent again
-	-- fixed it to work with Qt 2.2.2 (I don't know, looks like
-	something got broken in the .ui file)
+	* Purchased 96 cans of Coke. Some may question the relevance, 
+	  but it's pretty relevant. :)
+	* Cleaned up changelog from start to finish. Nice and orderly now.
+	* Added qagent.pro and qagent_en.ts to CVS. These are needed for 
+	* Started work on translation. This should be easier than I'd
+	  thought.
 
-11/02/00:
-	-- more initial work. I should really sort out what the hell I'm
-calling this thing.
-	-- initial work on the mode hookup.
-	-- initial round of changes to talk to setupdb; more once we worry
-about the XML file..
-	-- fixed other miscellaneous damages done to host.def. 
-	-- swapped page order in host.def of fenris and dispatch pages to
-prevent wierdness.
-	-- finally abolished the bloody help button. :)
-10/30/00:
-	-- fixed minor bug in makefile process introduced in last revision
-	-- reimplemented qagentImpl::next()
-	-- reimplemented qagentImpl::back()
-10/25/00:
-	-- started the gory revamping of the path stuff. Ripped out all the
-crud from pressedNext() et al, and then relinked things.
-	-- figured out what the hell QT is doing with the qWizard. Turns out
-that the extra finish button is my fault, but the reason I couldn't work it
-out is due to poor documentation.
-	-- back to work!
+11/28/00	Nicholas Vining		<mordred@lokigames.com>
 
-10/19/00:
-	-- fixed a Mindrover bug.
-	-- added GUI screens for the new Path code, and for Fenris.
+	* After a very long absence, got back on QAgent again.
+	* Fixed it to work with Qt 2.2.2 (I don't know, looks like
+	  something got broken in the .ui file)
 
-10/18/00:
+11/02/00	Nicholas Vining		<mordred@lokigames.com>
 
-	-- tried to actually get this to run with MindRover. That stirred
-up a whole truckload of problems which got fixed:
+	* More initial work. I should really sort out what the hell I'm
+    	  calling this thing.
+	* Initial work on the mode hookup.
+	* Initial round of changes to talk to setupdb; more once we worry
+	  about the XML file..
+	* Fixed other miscellaneous damages done to host.def. 
+	* Swapped page order in host.def of fenris and dispatch pages to
+	  prevent wierdness.
+	* Finally abolished the bloody help button. :)
+
+10/30/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Fixed minor bug in makefile process introduced in last revision
+	* Reimplemented qagentImpl::next()
+	* Reimplemented qagentImpl::back()
+
+10/25/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Started the gory revamping of the path stuff. Ripped out all the
+	  crud from pressedNext() et al, and then relinked things.
+	* Figured out what the hell QT is doing with the qWizard. Turns out
+	  that the extra finish button is my fault, but the reason I couldn't
+	  work it out is due to poor documentation.
+	* back to work!
+
+10/19/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Fixed a bug exposed by trying to get this working with MindRover.
+	* Added GUI screens for the new Path code, and for Fenris.
+
+10/18/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Tried to actually get this to run with MindRover. That stirred
+	  up a whole truckload of problems which got fixed:
 		-- changed insulation of product description
 		-- the aforementioned memory leak.
-	-- fixed a SEVERE memory leak which was causing a segfault. Can you
-spot the problem:
+		-- fixed a SEVERE memory leak which was causing a segfault. 
+	  	   Can you spot the problem:
 
-	(char *)product_name = (char *)malloc(strlen(argv[i]+1));
+		   (char *)product_name = (char *)malloc(strlen(argv[i]+1));
 
-	I'm a schmuck.
-
-	-- fixed a stupid little bug with qagentImpl::finishedExecution.
-	-- added some more goop related to the product system.
-	-- and a switch in md5sum.sh to indicate whether or not we care
-about generating MD5 sums.
-	-- we now have a dependency in the makefile.
-	-- hooked up md5sum.sh
-
-10/17/00:
-	-- hooked up privacy policy dialog.  
-	-- "directory-safed" the entire program from start to finish. Fun.
-	-- checked to make sure that we can actually decrypt the results of
-the process, which is probably a good thing, no? :-)
-	-- added some code from loki_utils to look for the current working
-directory.
-	-- made it so that the "choose file" box automatically jumps to the
-default location. (I have so much gunk in my home directory that you can see
-it blank out for about 10 seconds while it tries to process it all ;-))
-	-- fixed a few more little bugs involving the jumps. 
-	-- took out a few more nasty errors involving jumping around with
-the QWizard object. Fun.
-	-- automatically loading text in the dumpFileEdit dialog (while
-proving that QStrings kick ASS :))
-	-- moved call to prepare_for_launch() from qagentImpl::Execute to
-qagentImpl::qagentImpl.
-	-- hooked up "Finish" button. Right now it's hooked up to the "Press
-Cancel Script", which will be a Bad Thing if I ever decide to add an "Are
-you sure you want to quit?" dialog.
-	-- changed settings on final page.
-	-- hooked up file transport. There is something there which needs to
-be pinged as a "fixme"...
-	-- repaired transport_file.sh from the ravages of time.
-10/16/00:
-	-- hooked up mailer. It works. Bedtime.
-	-- added code to assemble bits and pieces to the qagent_target, so
-we can then pick a dispatch mechanism and dump the bugger.
-	-- yay! Encryption works. Time for a CVS checkin.
-	-- moved all defines for filenames from utils.cpp to utils.h
-	-- Did you know that you can make GPG crash by making its
-destination file the source file? Fun.
-	-- GPG didn't like having multiple lines of arguments for some
-reason.
-	-- initial GPG hook up. Fun.
-	-- made header file load into the "final check" dialog box.
-	-- added a few more pieces of text into host.def
-	-- lock the final page unless the user clicks the I'm sure box.
-	-- added variable useGPG, hooked up gpgCheckBox
-	-- made that look a little nicer.
-	-- hooked up some code to generate the necessary extra crud from the
-qagentImpl widgets to pass to the header generation code.
-	-- hooked up some code to generate the header.
-	-- threw in some stuff for the policy dialog..
-	-- changed text "Dump to Text File" to "Save as Text File". Some
-people might get the wrong idea if we use "Dump"..
-	-- added some verbose stuff.
-	-- hooked up dispatchMechanismState variable, another one of those
-tasks which will hopefully lead to a clean up of the internals.
-	-- added dispatchMechanismChanged slot and linked it to the
-buttonGroup.
-
-	-- hooked it up to one of the cases.
-	-- write check_for_GPG function.
-	-- implemented jumpTo, hooked it up. <shrug> It's an improvement.
-	-- fixed that, with a slap patch. What a mess. We need a jumpto
-function REALLY badly.
-	-- swapped page orders for the "NoGNUPG" page, and the "DumpFile"
-page. This happily broke the page swapping mechanism, and meant another
-foray into the murky depths of the (fortunately hypertext-based!) .ui file.
-This should NOT be necessary!
-	-- pulled out GPGReceivedData. That's the wrong way to do things.
-	-- rewired a few thingies in utils.cpp so we have all the paths
-specified constantly. (more or less)
-	-- flipped toggle bit on the "Final Check" header multiline edit to
-make it read only.
-	-- whoops! when I pulled productdump.sh, I forgot to remove the tag
-counter down...
-	-- added a dialog box to view the header to the "Final Check"
-screen.
-	-- pulled out productdump.sh; stuff like that should go into a
-header generation routine, especially so we can then merge the two with
-either encrypted or non-encrypted text.
-	-- rebuilt mail transport script, modelled after GPG encrypt script.
+		   I'm a schmuck.
+		-- fixed a stupid little bug with qagentImpl::finishedExecution.
+		-- added some more goop related to the product system.
+		-- and a switch in md5sum.sh to indicate whether or not we care
+		   about generating MD5 sums.
 	
-10/13/00:
-	-- added a "final check" screen. Miraculously enough, for once
-the springs worked the way that they are supposed to.
-	-- oops -- the key generation script wasn't being called properly in
-the Makefile. Fixed
-	-- built gen_encrypt_gpg.sh. I think my backslash key has broken.
-	-- built example key generation script, with the hope that nobody
-will ever use it. Note that the make process still expects keys in that
-directory...
-	-- added keys directory.
-	-- made the "home" directory public.
+	* We now have a dependency in the makefile.
+	* Hooked up md5sum.sh.
 
-10/12/00:
-	-- changed the name of the finishLabel back to how it should be.
-	-- shrunk the size of the font in the "User Comment" screen as well,
-and turned on word wrap as well.
-	-- shrunk size of font in the "Findings" screen, and added word
-wrap.
-	-- pulled out encrypt.sh and encrypt_twofish.sh from the build
-process. I can put them back later if we ever DO get a twofish cypher for
-non-GPG users... 
-	-- added privacy dialog.
-	-- hooked up some stuff to the defines.
-	-- added code to generate #defines for various pages to host.def and
-gen_host_def_h.sh. I know that host_def.h is the right .h file for something
-like this, but I'm not sure that this is the right way to go about it. Oh
-well, I can clean this out later.
-	-- changed validator for the contact information. before, you could
-move back and it would lock the next button again. Interestingly enough,
-this is probably also a bug in the QT Wizard Example. Whee.
-	-- fixed everything that that broke :-)
-	-- manually edited qagent.ui to move the Contact Information stuff
-BEFORE the dispatch mechanism. My word, yes, that WAS exciting.
-	-- added error dispatch mechanism, tagged as "<e>"
-	-- modified code to handle all internal scripting stuff as
-subprocesses. This way we can track error codes better. (Note that this was
-something that we already had done for the user-defined script, in case of
-shoddy programming)
-	-- hooked up dumpFileEdit to the QFileDialog stuff. (part one)
-	-- oddly enough, the method I chose for closing the application
-causes problems with the QFileDialog code. You would finish up with the
-QFileDialog and it would take down the whole application. Changed.
-	-- added "Save File As" dialog for Dump File.
-	-- added validator for contact information page.
-	-- pared a couple of entries off of the TODO file.
-	-- cleaned up GUI stuff for Sam. Swapped some stuff around, cleaned
-up the contact information page.
-	-- got rid of dubious typecasts.
-	-- added some extra goodies to the dump file stuff, and a finish page.
-	-- got the accursed automatic jumping working, finally. What a hack.
-	-- added token for user script; upped token count to 14.
-	-- removed export display = :0 from xinfo.sh, that's a bad thing.
-	-- removed offensive breaking compatibility things
-10/11/00:
-	-- made user defined script support works, fixed an interesting
-array of things in the process.
-	-- added support for user defined scripts
-	-- added template script
-	-- changed bogus exporting of "stack_path" to "stack_trace_path"
-	-- dinking with wizard internals. Bleah.
-10/10/00:
-	-- removed big gobbetts of nasty environment passing stuff which was
-causing trouble by generating bogus results.
-	-- rewrite internals of qagent.sh to make it work.
-	-- added productdump.sh
-	-- Added hack in utils.c to put quotes around the description. Do we
-want to do that to everything, I wonder?
-	-- Added code to pass all the data correctly.
-	-- oops. The latest batch of changes broke the hardware detection.
+10/17/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Hooked up privacy policy dialog.  
+	* "directory-safed" the entire program from start to finish. Fun.
+	* Checked to make sure that we can actually decrypt the results of
+	  the process, which is probably a good thing, no? :-)
+	* Added some code from loki_utils to look for the current working
+	  directory.
+	* Made it so that the "choose file" box automatically jumps to the
+	  default location. (I have so much gunk in my home directory that 
+	  you can see it blank out for about 10 seconds while it tries to 
+	  process it all ;-))
+	* Fixed a few more little bugs involving the jumps. 
+	* Took out a few more nasty errors involving jumping around with
+	  the QWizard object. Fun.
+	* Automatically loading text in the dumpFileEdit dialog (while
+	  proving that QStrings kick ass :))
+	* Moved call to prepare_for_launch() from qagentImpl::Execute to
+	  qagentImpl::qagentImpl.
+	* Hooked up "Finish" button. Right now it's hooked up to the "Press
+	  Cancel Script", which will be a Bad Thing if I ever decide to add 
+	  an "Are you sure you want to quit?" dialog.
+	* Changed settings on final page.
+	* Hooked up file transport. There is something there which needs to
+	  be pinged as a "fixme"...
+	* Repaired transport_file.sh from the ravages of time.
+
+10/16/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Hooked up mailer. It works. Bedtime.
+	* Added code to assemble bits and pieces to the qagent_target, so
+	  we can then pick a dispatch mechanism and dump the bugger.
+	* Encryption works. Time for a CVS checkin.
+	* Moved all defines for filenames from utils.cpp to utils.h
+	* Did you know that you can make GPG crash by making its
+	  destination file the source file? Fun.
+	* GPG didn't like having multiple lines of arguments for some
+	  reason.
+	* initial GPG hook up. Fun.
+	* made header file load into the "final check" dialog box.
+	* added a few more pieces of text into host.def
+	* lock the final page unless the user clicks the I'm sure box.
+	* added variable useGPG, hooked up gpgCheckBox
+	* made that look a little nicer.
+	* hooked up some code to generate the necessary extra crud from the
+	  qagentImpl widgets to pass to the header generation code.
+	* hooked up some code to generate the header.
+	* threw in some stuff for the policy dialog..
+	* changed text "Dump to Text File" to "Save as Text File". Some
+	  people might get the wrong idea if we use "Dump"..
+	* added some verbose stuff.
+	* hooked up dispatchMechanismState variable, another one of those
+	  tasks which will hopefully lead to a clean up of the internals.
+	* added dispatchMechanismChanged slot and linked it to the
+	  buttonGroup.
+	* hooked it up to one of the cases.
+	* wrote check_for_GPG function.
+	* implemented jumpTo, hooked it up. <shrug> It's an improvement.
+	* fixed that, with a slap patch. What a mess. We need a jumpto
+	function REALLY badly.
+		UPDATE: Fixed and cleaned, praise the Goddess.
+	* swapped page orders for the "NoGNUPG" page, and the "DumpFile"
+	  page. This happily broke the page swapping mechanism, and meant 
+	  another foray into the murky depths of the (fortunately 
+	  hypertext-based!) .ui file. This should NOT be necessary!
+	* pulled out GPGReceivedData. That's the wrong way to do things.
+	* rewired a few thingies in utils.cpp so we have all the paths
+	  specified constantly. (more or less)
+	* flipped toggle bit on the "Final Check" header multiline edit to
+	  make it read only.
+	* whoops! when I pulled productdump.sh, I forgot to remove the tag
+	  counter down...
+	* added a dialog box to view the header to the "Final Check"
+	  screen.
+	* pulled out productdump.sh; stuff like that should go into a
+	  header generation routine, especially so we can then merge 
+	  the two with either encrypted or non-encrypted text.
+	* rebuilt mail transport script, modelled after GPG encrypt script.
+	
+10/13/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* added a "final check" screen. Miraculously enough, for once
+	  the springs worked the way that they are supposed to.
+	* oops -- the key generation script wasn't being called properly in
+	  the Makefile. Fixed
+	* built gen_encrypt_gpg.sh. I think my backslash key has broken.
+	* built example key generation script, with the hope that nobody
+	  will ever use it. Note that the make process still expects 
+	  keys in that directory. In the event that it doesn't find them, it
+	  will try to call the key generation script.
+	* added keys directory.
+	* made the "home" directory public.
+
+10/12/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* changed the name of the finishLabel back to how it should be.
+	* shrunk the size of the font in the "User Comment" screen as well,
+	  and turned on word wrap as well.
+	* shrunk size of font in the "Findings" screen, and added word
+	  wrap.
+	* pulled out encrypt.sh and encrypt_twofish.sh from the build
+	* process. I can put them back later if we ever DO get a twofish cypher for
+	  non-GPG users... 
+	* added privacy dialog.
+	* hooked up some stuff to the defines.
+	* added code to generate #defines for various pages to host.def and
+ 	  gen_host_def_h.sh. I know that host_def.h is the right .h file for 
+	  something like this, but I'm not sure that this is the right way to 
+	  go about it. Oh well, I can clean this out later.
+		UPDATE: Fixed for translation [12/06/00]
+	* changed validator for the contact information. before, you could
+	  move back and it would lock the next button again. Interestingly enough,
+	  this is probably also a bug in the QT Wizard Example. Whee.
+	* fixed everything that that broke :-)
+	* manually edited qagent.ui to move the Contact Information stuff
+	  BEFORE the dispatch mechanism. My word, yes, that WAS exciting.
+	* added error dispatch mechanism, tagged as "<e>"
+	* modified code to handle all internal scripting stuff as
+	  subprocesses. This way we can track error codes better. (Note that 
+	  this was something that we already had done for the user-defined 
+	  script, in case of shoddy programming)
+	* hooked up dumpFileEdit to the QFileDialog stuff. (part one)
+	* oddly enough, the method I chose for closing the application
+	  causes problems with the QFileDialog code. You would finish up 
+	  with the QFileDialog and it would take down the whole application. 
+	  Changed.
+	* added "Save File As" dialog for Dump File.
+	* added validator for contact information page.
+	* pared a couple of entries off of the TODO file.
+	* cleaned up GUI stuff for Sam. Swapped some stuff around, cleaned
+	  up the contact information page.
+	* got rid of dubious typecasts.
+	* added some extra goodies to the dump file stuff, and a finish page.
+	* got the accursed automatic jumping working, finally. What a hack.
+	* added token for user script; upped token count to 14.
+	* removed export display = :0 from xinfo.sh, that's a bad thing.
+	* removed offensive breaking compatibility things
+
+10/11/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* made user defined script support works, fixed an interesting
+	  array of things in the process.
+	* added support for user defined scripts
+	* added template script
+	* changed bogus exporting of "stack_path" to "stack_trace_path"
+	* dinking with wizard internals. Bleah.
+
+10/10/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* removed big gobbetts of nasty environment passing stuff which was
+	  causing trouble by generating bogus results.
+	* rewrite internals of qagent.sh to make it work.
+	* added productdump.sh
+	* Added hack in utils.c to put quotes around the description. Do we
+	  want to do that to everything, I wonder?
+	* Added code to pass all the data correctly.
+	* oops. The latest batch of changes broke the hardware detection.
 We no longer use environment variables, remember?
-	-- now properly reading dump data into the dialog box
-	-- stole getline code from CVS. don't know where they stole it from.
-	-- added possible fix for occasionally allowing the user to advance while the
-progress bar was at 83%.
-	-- set a whole bunch of labels to "Word Wrap".
-	-- the Makefiles occasionally had a nasty tendency to copy the
-qagent program into the build directory, then rebuild the changes. Fixed, I
-think.
-	-- moved a whole bunch of stuff out of qt_gui.cpp and into the
-qagentImpl constructor. There are some explicit typecasts there which are
-necessary, but I haven't figured out why yet. This is a bit worrissome.
-	-- fixed buttons in dispatch mechanism dialog.
-	-- the progress bar works!
-	-- we now read data from stdout as part of qagentImpl; this will be
-used for advancing the progress bar.
-	-- fixed bogus picture alignment on page 1 (scanning system)
-10/09/00:
-	-- tweaked some stuff in the makefiles to get ready for CVS import;
-in particular, pertaining to the .moc.cpp generated files.
-	-- exciting and fun filled changes to clean up the mess that trying
-to get the shell scripts executing properly left.
-	-- changed hacked_detect/detect.c so that we don't get stupid error
-messages any more.
-	-- moved sidebar.png from qt_gui to the new "data" directory; also
-made this actually end up in the build directory.
-	-- argh! Yes, of course defining a KProcess inside of a procedure is
-going to mean that its destructor gets called at the end of the procedure!
-I'm a twit. Changed it to a pointer, with the note that in order to be
-REALLY nice we should probably move it back later.
-	This means that this scuffle is over, and working on everything else
-can proceed. 
-	-- we no longer pass anything as environment variables; this is not
-only better, but it is a kludge around a problem with KProcess... or my
-hackage. 
-	-- made leftover code from KDE 1.95 (final KDE 2 beta!) work without
-relying on external dependencies. I think.
-	-- it works. We are now calling the script properly, and then
-re-enabling the button. Yay.
+	* now properly reading dump data into the dialog box
+	* stole getline code from CVS. don't know where they stole it from.
+	* added possible fix for occasionally allowing the user to advance 
+	  while the progress bar was at 83%.
+	* set a whole bunch of labels to "Word Wrap".
+	* the Makefiles occasionally had a nasty tendency to copy the
+	  qagent program into the build directory, then rebuild the changes. 
+	  Fixed, I think.
+	* moved a whole bunch of stuff out of qt_gui.cpp and into the
+	  qagentImpl constructor. There are some explicit typecasts there 
+	  which are necessary, but I haven't figured out why yet. This is 
+	  a bit worrisome.
+	* fixed buttons in dispatch mechanism dialog.
+	* the progress bar works!
+	* we now read data from stdout as part of qagentImpl; this will be
+	  used for advancing the progress bar.
+	* fixed bogus picture alignment on page 1 (scanning system)
 
-10/07/00:
-	-- yes, but it doesn't do what I want it to do.
-10/05/00:
-	-- cleaned up in preparation for initial import into CVS.
-	-- two days later, we DO have a threading solution! YESYESYESYES!
-10/03/00:
-	-- did fascinating things, broke stuff, removed stuff, trying to get
-this stupid thing to work. I think we finally have a threading solution...
+10/09/00	Nicholas Vining		<mordred@lokigames.com>
 
-09/29/00:
-	-- finally got the pushbutton hooks up.
-	-- implemented hook to qagentImpl::pageChanged(); we may want to
-reimplement this slot so that it exists in the GUI as well at some point...
-but I doubt it.
-	-- fixed multiple pixmap loading bug
-	-- taught myself some network programming -- an unrelated project,
-but it's sure to help.
-	-- Got pixmap loading dynamically. This is an ideal but not perfect
-solution, as in a perfect world we want to have the pixmap data generated on
-the fly. Doesn't help the damned flickering though -_-
+	* tweaked some stuff in the makefiles to get ready for CVS import;
+	  in particular, pertaining to the .moc.cpp generated files.
+	* exciting and fun filled changes to clean up the mess that trying
+	  to get the shell scripts executing properly left.
+	* changed hacked_detect/detect.c so that we don't get stupid error
+	  messages any more.
+	* moved sidebar.png from qt_gui to the new "data" directory; also
+	  made this actually end up in the build directory.
+	* argh! Yes, of course defining a KProcess inside of a procedure is
+	  going to mean that its destructor gets called at the end of the 
+	  procedure! I'm a twit. Changed it to a pointer, with the note that 
+	  in order to be REALLY nice we should probably move it back later.
 
-09/28/00:
-	-- started work on new GUI. The design is more or less in place, but
-we need to abstract the slots, and make sure that we can do something about
-the flickering pixmaps... @$#@$#@%....
-	-- Linked up privacy dialog properly so that it actually aborts and
-won't let you through
-	-- scrapped the GUI... it sucked anyways.
-	-- wrote X server detect code (probably the wrong way, though...)
-	-- lots of under the hood stuff to make things work gracefully
-in a console.
+	  This means that this scuffle is over, and working on everything else
+          can proceed.
+ 	* we no longer pass anything as environment variables; this is not
+	  only better, but it is a kludge around a problem with KProcess.
+	  or my hackage. 
+	* made leftover code from KDE 1.95 (final KDE 2 beta!) work without
+	  relying on external dependencies. I think.
+	* it works. We are now calling the script properly, and then
+	  re-enabling the button. Yay.
 
-09/27/00:
-	-- required click through on privacy dialog before encryption and
-transportation	
-	-- fixed a couple of seg faults
-	-- made privacy dialog titles part of host.def
-	-- added parameter parsing
-	-- learned fascinating things about Linux Memory Management :-)
-	-- changed dump_file to dump_path in qagent.sh and related scripts for consistency
-	-- got rid of icky coin in corner
-	-- home directory finding now done in main.cpp instead of qagent.sh
-	-- .loki/support is now a specifiable directory in host.def
+10/07/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* yes, but it doesn't do what I want it to do.
+
+10/05/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* cleaned up in preparation for initial import into CVS.
+	* two days later, we DO have a threading solution! YESYESYESYES!
+
+10/03/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* did fascinating things, broke stuff, removed stuff, trying to get
+	  this stupid thing to work. I think we finally have a threading 
+	  solution...
+
+09/29/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* finally got the pushbutton hooks up.
+	* implemented hook to qagentImpl::pageChanged(); we may want to
+	  reimplement this slot so that it exists in the GUI as well at 
+	  some point... but I doubt it.
+	* fixed multiple pixmap loading bug
+	* taught myself some network programming -- an unrelated project,
+	  but it's sure to help.
+	* Got pixmap loading dynamically. This is an ideal but not perfect
+	  solution, as in a perfect world we want to have the pixmap data 
+	  generated on the fly. Doesn't help the damned flickering though -_-
+
+09/28/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* started work on new GUI. The design is more or less in place, but
+	  we need to abstract the slots, and make sure that we can do something 
+	  about the flickering pixmaps... @$#@$#@%....
+	* Linked up privacy dialog properly so that it actually aborts and
+	  won't let you through
+	* scrapped the GUI... it sucked anyways.
+	* wrote X server detect code (probably the wrong way, though...)
+	* lots of under the hood stuff to make things work gracefully
+	  in a console.
+
+09/27/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* required click through on privacy dialog before encryption and
+	  transportation	
+	* fixed a couple of seg faults
+	* made privacy dialog titles part of host.def
+	* added parameter parsing
+	* learned fascinating things about Linux Memory Management :-)
+	* changed dump_file to dump_path in qagent.sh and related scripts for consistency
+	* got rid of icky coin in corner
+	* home directory finding now done in main.cpp instead of qagent.sh
+	* .loki/support is now a specifiable directory in host.def
