@@ -1,6 +1,5 @@
 #include "host_def.h"
 #include "qagent_globals.h"
-#include "x_utils.h"
 #include "utils.h"
 
 #include "qt_gui.h"

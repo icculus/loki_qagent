@@ -3,12 +3,12 @@
 #include <X11/Xos.h>
 #include <X11/Xatom.h>
 
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "host_def.h"
-#include "qagent_globals.h"
-#include "x_utils.h"
+#define FALSE 0
+#define TRUE (!FALSE)
 
 int check_for_X ( void )
 {
@@ -34,4 +34,16 @@ int check_for_X ( void )
 
 	return result;
 
+}
+
+int main ( int argc, char *argv[] )
+{
+	if (check_for_X())
+	{
+		execv("./qagent_x11",argv);
+	}
+	else
+	{
+		execv("./qagent_curses",argv);	
+	}
 }

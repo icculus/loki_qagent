@@ -1,3 +1,8 @@
+01/05/00	Nicholas Vining		<mordred@lokigames.com>
+
+	* Launcher works. This meant pulling things out, removing other
+	  things, and dead poultry.
+
 01/04/00	Nicholas Vining		<mordred@lokigames.com>
 
 	* Changes to makefile to make things compile again. The embedded
