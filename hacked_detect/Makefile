@@ -12,7 +12,7 @@ CPPFLAGS = -pipe -g
 
 detect : detect.o
 	gcc -pipe -g -L/usr/local/lib -static -o detect $(OBJECTS) /usr/local/lib/libdetect.a
-	strip detect
+#	strip detect
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $< -o $@
