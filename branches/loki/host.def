@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# Sample host.def
+#
+# This should be more or less self-explanatory
+
+# Stuff you can change
+#-------------------------------------------------------------------------
+
+# Stuff related to the GPG public key generation process. This process
+# is intended as an EXAMPLE only. Do NOT use it.
+
+# The public key name. Choose something distinctive. I suggest the name
+# of your company/group, followed by "_qagent". Don't just choose qagent,
+# since I'm sure EVERYBODY will choose that one. 
+
+publickeyfile="yoyodyne_key.pub"
+secretkeyfile="yoyodyne_key.sec"
+publickeyname="yoyodyne_qagent"
+passphrase="gnomovision"
+
+# Stuff related to qagent
+
+target_email=qagent@lokigames.com
+support_email=support@lokigames.com
+program_name="Yoyodyne QAgent"
+default_title="Yoyodyne Inc. Quality Assurance Agent"
+program_intro_text="Welcome to the Yoyodyne Quality Assurance Agent.\n\nThis program is designed to help our Tech Support staff deal with your problems in a quick, efficient, and accurate manner, by providing us with diagnostic information about your machine.\n\n\nPlease press NEXT to continue"
+scan_system_text="Please wait while the Quality Assurance Agent examines your system. This can take a while on older computers, so do not panic if the progress bar stops. After the NEXT button becomes active, please click it to continue."
+describe_findings_text="This is the information that our Quality Assurance department will see.\n\nPlease read this carefully and make sure that you have no objections to us seeing this information. Then hit NEXT."
+user_comment_text="If you would like to send a comment with this information, please enter it here. Otherwise, hit NEXT." 
+dispatch_mechanism_text="In order for us to be able to receive this information, you must choose which dispatch mechanism you wish to use. Choose your dispatch mechanism from the list below and then click NEXT."
+contact_info_text="At this point, we need to collect some information about you in order to be able to assist you further. Please fill out the boxes below and hit NEXT to continue."
+privacy_dialog_title="Yoyodyne, Inc. Privacy Policy"
+final_check_text="Please check to make sure that the information below is correct. Once you are sure, please click the check box below and click NEXT to send the information."
+
+# Note that this isn't properly hooked up to the makefile yet.
+
+sidebar_pixmap="sidebar.png"
+
+# This is the path to the support directory, where we look for stack dumps,
+# dump the QAgent file, the encrypted file, and anything else that falls
+# under the general category of "useful things". Note that this is a
+# subdirectory in the current user's home directory. For instance, when I
+# run it, the target directory would really be
+# "/home/mordred/.yoyodyne/support".
+
+support_directory="/.yoyodyne/support"
+
+# Do we use SetupDB or don't we?
+
+ENABLE_SETUPDB=true
+
+# Don't change anything below here. -- N.
+#
+#------------------------------------------------------------------------- 
+
+intro_page=0
+path_page=1
+product_page=2
+scan_page=3
+findings_page=4
+comment_page=5
+contact_page=6
+fenris_page=7
+dispatch_page=8
+file_page=9
+nogpg_page=10
+policy_page=11
+final_check_page=12
+finished_page=13
