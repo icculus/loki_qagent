@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Form interface generated from reading ui file 'qagent.ui'
 **
-** Created: Fri Nov 3 01:48:36 2000
+** Created: Tue Nov 28 18:15:49 2000
 **      by:  The User Interface Compiler (uic)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -120,23 +120,23 @@ public slots:
     virtual void sureButtonChanged();
 
 protected:
-    QVBoxLayout* vbox;
-    QVBoxLayout* vbox_2;
-    QGridLayout* grid;
-    QGridLayout* grid_2;
-    QGridLayout* grid_3;
-    QGridLayout* grid_4;
-    QGridLayout* grid_5;
-    QGridLayout* grid_6;
-    QGridLayout* grid_7;
-    QGridLayout* grid_8;
-    QGridLayout* grid_9;
-    QGridLayout* grid_10;
-    QGridLayout* grid_11;
-    QGridLayout* grid_12;
-    QGridLayout* grid_13;
-    QGridLayout* grid_14;
-    QGridLayout* grid_15;
+    QGridLayout* Widget2Layout;
+    QGridLayout* Widget13Layout;
+    QVBoxLayout* ButtonGroup2Layout;
+    QGridLayout* Widget12Layout;
+    QGridLayout* Widget3Layout;
+    QGridLayout* Widget4Layout;
+    QGridLayout* Widget5Layout;
+    QGridLayout* Widget7Layout;
+    QGridLayout* Widget14Layout;
+    QGridLayout* Frame3Layout;
+    QGridLayout* Widget6Layout;
+    QVBoxLayout* ButtonGroup1Layout;
+    QGridLayout* Widget9Layout;
+    QGridLayout* Widget8Layout;
+    QGridLayout* Widget12Layout_2;
+    QGridLayout* Widget10Layout;
+    QGridLayout* Widget11Layout;
     bool event( QEvent* );
 };
 

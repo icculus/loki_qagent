@@ -1,3 +1,8 @@
+11/28/00:
+	-- after a very long absence, got back on QAgent again
+	-- fixed it to work with Qt 2.2.2 (I don't know, looks like
+	something got broken in the .ui file)
+
 11/02/00:
 	-- more initial work. I should really sort out what the hell I'm
 calling this thing.
