@@ -43,23 +43,7 @@ int main (int argc, char *argv[])
 {
 
 	parse_args(argc,argv);
-
-// Check for X display. (poorly. This probably is the wrong way...)
-
-	if (check_for_X() == TRUE)
-	{
-		printf("Found an X Display!\n");
-		prepare_for_launch();
-		run_QT_GUI(argc,argv);
-	}
-	else
-	{
-		printf("Didn't find an X Display!\n");
-		prepare_for_launch();
-		run_console_GUI();
-	}
-
-//	prepare_for_launch();
-//	int error_code = system("./qagent.sh");
+	prepare_for_launch();
+	run_QT_GUI(argc,argv);
 
 }

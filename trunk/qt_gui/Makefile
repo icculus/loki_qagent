@@ -1,5 +1,7 @@
 include ../host.def
 
+all: x11 embedded
+
 uifiles = qagent.ui
 
 # Localization files.
@@ -10,7 +12,7 @@ gen_hdrs = $(uifiles:.ui=.h)
 gen_srcs = $(uifiles:.ui=.cpp)
 
 new_hdrs =
-new_srcs = main.cpp x_utils.cpp utils.cpp qt_gui.cpp console_gui.cpp \
+new_srcs = main.cpp utils.cpp qt_gui.cpp console_gui.cpp \
 	KDE/kprocctrl.cpp KDE/kprocess.cpp
 
 moc_srcs = qagentimpl.moc.cpp qagent.moc.cpp KDE/kprocctrl.moc.cpp KDE/kprocess.moc.cpp
@@ -25,7 +27,7 @@ CC = gcc
 CPP = gcc
 UIC = /usr/local/src/qt/bin/uic
 MOC = /usr/bin/moc
-LIBFLAGS = -lqt -L$(QTDIR)/lib
+LIBFLAGS = 
 INCLUDEFLAGS = -I$(QTDIR)/include
 
 VERSION = 0.0.1
@@ -51,8 +53,13 @@ endif
 
 .PRECIOUS: %.h %.moc.cpp %.cpp %impl.h %impl.cpp
 
-qagent : $(objects) $(qmfiles)
-	$(CPP) -pipe -g -o qagent $(objects) $(LIBFLAGS)
+x11 : $(objects) $(qmfiles)
+	export QTDIR=$(QTX11DIR)
+	$(CPP) -pipe -g -o qagent_x11 $(objects) $(LIBFLAGS) -L$(QTX11DIR)/lib -lqt
+
+embedded : $(objects) $(qmfiles)
+	export QTDIR=$(QTEMBEDDEDDIR)
+	$(CPP) -pipe -g -o qagent_embed $(objects) $(LIBFLAGS) -L$(QTEMBEDDEDDIR)/lib -lqte
 
 %.moc.cpp: %.h
 	$(MOC) -o $@ $<
@@ -83,10 +90,10 @@ qmfiles:
 tsfiles:
 	lupdate qagent.pro
 clean:
-	rm qagent $(objects) $(gen_srcs) host_def.h $(qmfiles)
+	rm qagent_x11 qagent_embed $(objects) $(gen_srcs) host_def.h $(qmfiles)
 
 real-clean:
-	rm qagent $(objects) $(moc_srcs) host_def.h $(qmfiles)
+	rm qagent_x11 qagent_embed $(objects) $(moc_srcs) host_def.h $(qmfiles)
 
 # Be VERY careful with these guys if you choose to uncomment them;
 # they basically give Make the power to fsck you over. I will not
@@ -98,4 +105,3 @@ real-clean:
 #%impl.h : %.h
 #	$(UIC) -o $@ -subdecl $(<:.h=Impl) $< $(<:.h=.ui)
 	
-all : qagent
