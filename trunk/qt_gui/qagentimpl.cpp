@@ -47,7 +47,7 @@ qagentImpl::qagentImpl( QWidget* parent,  const char* name, bool modal, WFlags f
 
 // Set the caption..
 
-	setCaption(_GEN_HOSTDEF_PROGRAM_NAME);
+	setCaption(QObject::tr(_GEN_HOSTDEF_PROGRAM_NAME));
 
 	dispatchMechanismState = DISPATCH_MAIL;
 
@@ -59,13 +59,13 @@ qagentImpl::qagentImpl( QWidget* parent,  const char* name, bool modal, WFlags f
 	scanProgressBar->setTotalSteps(totalProgressCounters);
 	scanProgressBar->setProgress(0); // otherwise we segfault...
 
-	introTextLabel->setText(_GEN_HOSTDEF_PROGRAM_INTRO_TEXT);
-	scanningTextLabel->setText(_GEN_HOSTDEF_SCAN_TEXT);
-	describeFindingsLabel->setText(_GEN_HOSTDEF_DESCRIBE_FINDINGS_TEXT);
-	userCommentLabel->setText(_GEN_HOSTDEF_USER_COMMENT_TEXT);	
-	dispatchMechanismLabel->setText(_GEN_HOSTDEF_DISPATCH_MECHANISM_TEXT);
-	contactInfoLabel->setText(_GEN_HOSTDEF_CONTACT_INFO_TEXT);
-	finalCheckLabel->setText(_GEN_HOSTDEF_FINAL_CHECK_TEXT);
+	introTextLabel->setText(QObject::tr("intro_text"));
+	scanningTextLabel->setText(QObject::tr("scan_text"));
+	describeFindingsLabel->setText(QObject::tr("findings_text"));
+	userCommentLabel->setText(QObject::tr("usercomment_text"));	
+	dispatchMechanismLabel->setText(QObject::tr("dispatch_mechanism_text"));
+	contactInfoLabel->setText(QObject::tr("contact_info_text"));
+	finalCheckLabel->setText(QObject::tr("final_check_text"));
 	dumpFileEdit->setText(QString::QString(home)+QString::fromLatin1("/qagent.txt"));
 
 	FILE *fp = fopen((QString::fromLatin1(work_dir)+QString::fromLatin1("/privacy.txt")),"rt");
