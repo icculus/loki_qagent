@@ -295,215 +295,34 @@ int main ( void ) {
   /********************************************************************/
   /* report mices                                                     */
   /********************************************************************/
-  if(((mouse = mouse_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(MOUSE)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
-  for(; mouse; mouse = mouse->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(MOUSE)),
-            bus2str(mouse->bus),
-            mouse->vendor,
-            mouse->model,
-            mouse->device);
-  }/*next mouse*/
+  if((mouse = mouse_detect(bus)) != NULL)
+  {
+  	for(; mouse; mouse = mouse->next){
+   		fprintf(report, 
+"<mouse>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<model>%s</model>\n<device>%s</device>\n</mouse>\n", 
+            		bus2str(mouse->bus),
+            		mouse->vendor,
+            		mouse->model,
+            		mouse->device);
+  	}/*next mouse*/
+  }
   
   /********************************************************************/
   /* report joystick(s)                                               */
   /********************************************************************/
-  if(((joystick = joystick_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(JOYSTICK)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"),
-            _("module"));
-  }/*endif*/
-  for(; joystick; joystick = joystick->next){
-    fprintf(report, "%s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(JOYSTICK)),
-            bus2str(joystick->bus),
-            joystick->vendor,
-            joystick->model,
-            joystick->device,
-            joystick->module);
-  }/*next joystick*/
-  
-  /********************************************************************/
-  /* report modem(s)                                                  */
-  /********************************************************************/
-  if(((modem = modem_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s:%s\n",
-            ToUpper(device2str(MODEM)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"),
-            _("speed"),
-            _("module"));
-  }/*endif*/
-  for(; modem; modem = modem->next){
-    fprintf(report, "%s:%s:%s:%s:%s:%ld:%s\n",
-            ToUpper(device2str(MODEM)),
-            bus2str(modem->bus),
-            modem->vendor, 
-            modem->model,
-            modem->device,
-            modem->speed,
-            modem->module);
-  }/*next modem*/
-  
-  /********************************************************************/
-  /* report isdn adpaters                                             */
-  /********************************************************************/
-  if(((isdn = isdn_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(ISDN)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("module"));
-  }/*endif*/
-  for(; isdn; isdn = isdn->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(ISDN)),
-            bus2str(isdn->bus),
-            isdn->vendor, 
-            isdn->model,
-            isdn->module);
-  }/*next isdn*/
-  
-  /********************************************************************/
-  /* report parallel port(s)                                          */
-  /********************************************************************/
-  if(((parallel = bus->parallel) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# PARALLEL:%s:%s\n", 
-            _("device"),
-            _("DOS_equivalent"));
-  }/*endif*/
-  for(; parallel; parallel=parallel->next){
-    fprintf(report, "PARALLEL:%s:%s\n", 
-            parallel->device,
-            parallel->dos_equivalent);
-  }/*next parallel*/
-  
-  /********************************************************************/
-  /* report serial port(s)                                            */
-  /********************************************************************/
-  if(((serial = bus->serial) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# SERIAL:%s:%s\n", 
-            _("device"),
-            _("DOS_equivalent"));
-  }/*endif*/
-  for(; serial; serial=serial->next){
-    fprintf(report, "SERIAL:%s:%s\n", 
-            serial->device,
-            serial->dos_equivalent);
-  }/*next serial*/
-  
-  /********************************************************************/
-  /* report game port(s)                                              */
-  /********************************************************************/
-  if(((gameport = gameport_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# GAMEPORT:%s:%s\n", 
-            _("vendor"),
-            _("model"));
-  }/*endif*/
-  for(; gameport; gameport=gameport->next){
-    fprintf(report, "GAMEPORT:%s:%s\n", 
-            gameport->vendor,
-            gameport->model);
-  }/*next gameport*/
-  
-  /********************************************************************/
-  /* report printer(s)                                                */
-  /********************************************************************/
-  if(((printer = printer_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(PRINTER)),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("device"));
-  }/*endif*/
-  for(; printer; printer=printer->next){
-    fprintf(report, "%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(PRINTER)),
-            bus2str(printer->bus),
-            printer->vendor,
-            printer->model,
-            printer->device);
-  }/*next printer*/
-  
-  /********************************************************************/
-  /* report other(s)                                                  */
-  /********************************************************************/
-  if(((others = others_detect(bus)) != NULL) && (verbose == 1)){
-    fprintf(report, "\n# %s:%s:%s:%s:%s:%s\n", 
-            ToUpper(device2str(OTHERS)),
-            _("ID"),
-            _("bus"),
-            _("vendor"),
-            _("model"),
-            _("module"));
-  }/*endif*/
-  for(; others; others=others->next){
-    if((others->bus == ISA) || (others->bus == SERIAL)){
-      fprintf(report, "%s:%s:%s:%s:%s:%s\n", 
-              ToUpper(device2str(OTHERS)),
-              others->dev_id,
-              bus2str(others->bus), 
-              others->vendor, 
-              others->model,
-              others->module);
-    }else{
-      fprintf(report, "%s:%08lx:%s:%s:%s:%s\n",  
-              ToUpper(device2str(OTHERS)),
-              others->long_id,
-              bus2str(others->bus),
-              others->vendor,
-              others->model,
-              others->module);
-    }/*endif*/
-  }/*next others*/
+  if((joystick = joystick_detect(bus)) != NULL)
+  {
+  	for(; joystick; joystick = joystick->next){
+    		fprintf(report, "<joystick>\n<bus>%s</bus>\n<vendor>%s</vendor>\n<device>%s</device>\n<module>%s</module>\n</joystick>\n", 
+            		ToUpper(device2str(JOYSTICK)),
+            		bus2str(joystick->bus),
+            		joystick->vendor,
+            		joystick->model,
+            		joystick->device,
+            		joystick->module);
+  	}/*next joystick*/
+  }
 
-
-#ifdef HAVE_LIBISAPNP
-  if(free_irqs_dmas_detect(irqs, dmas) == 0){
-    /******************************************************************/
-    /* report free IRQ(s)                                             */
-    /******************************************************************/
-    if(verbose == 1){
-      fprintf(report, "\n# FREE_IRQS:[%s:]\n", 
-              _("IRQ"));
-    }/*endif*/
-    fprintf(report, "FREE_IRQS:");
-    for(i = 0; irqs[i] != -1; i++){
-      fprintf(report, "%d:", irqs[i]);
-    }/*next i*/
-    fprintf(report, "\n");
-
-    /******************************************************************/
-    /* report free DMA(s)                                             */
-    /******************************************************************/
-    if(verbose == 1){
-      fprintf(report, "\n# FREE_DMAS:[%s:]\n", 
-              _("DMA"));
-    }/*endif*/
-    fprintf(report, "FREE_DMAS:");
-    for(i = 0; dmas[i] != -1; i++){
-      fprintf(report, "%d:", dmas[i]);
-    }/*next i*/
-  }else{
-    fprintf(report, 
-          "\n# Got some errors reporting FREE_IRQS and FREE_DMAS!!!\n");
-  }/*endif*/
-#endif
 
   /********************************************************************/
   /* finally we have detected all hardware :-)                        */
