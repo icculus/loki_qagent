@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Form interface generated from reading ui file 'qagent.ui'
 **
-** Created: Wed Dec 6 15:51:36 2000
+** Created: Wed Dec 20 04:00:14 2000
 **      by:  The User Interface Compiler (uic)
 **
 ** WARNING! All changes made in this file will be lost!
