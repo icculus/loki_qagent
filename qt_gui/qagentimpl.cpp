@@ -219,7 +219,7 @@ void qagentImpl::back ( void )
 	else if (pageOn == QAGENT_POLICY_PAGE)
 	{
 
-		if (dumpDispatchButton->isChecked())
+		if (fileDispatchButton->isChecked())
 		{
 			jumpTo(QAGENT_FILE_PAGE);
 		}
@@ -260,7 +260,7 @@ void qagentImpl::next ( void )
 			jumpTo(QAGENT_POLICY_PAGE);
 		}
 	}
-	else if ((pageOn == QAGENT_FILE_PAGE) && (dumpDispatchButton->isChecked()))
+	else if ((pageOn == QAGENT_FILE_PAGE) && (fileDispatchButton->isChecked()))
 	{
 		if (check_for_GPG() == FALSE)
 		{
@@ -457,7 +457,7 @@ void qagentImpl::dispatchMechanismChanged ( void )
 #endif
 		dispatchMechanismState = DISPATCH_MAIL;
 	}
-	else if (dumpDispatchButton->isChecked())
+	else if (fileDispatchButton->isChecked())
 	{
 #ifdef VERBOSE
 		printf("Dispatch Mechanism: File Dump\n");
