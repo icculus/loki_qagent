@@ -9,8 +9,8 @@
 
 # Evil, mad, twisted QT stuff for the multiple version functionality.
 
-QTX11DIR=/usr/local/src/qt-2.2.3/
-QTEMBEDDEDDIR=/usr/local/src/qt-embedded/
+QTX11DIR=/usr/local/src/qt-2.2.3
+QTEMBEDDEDDIR=/usr/local/src/qt-embedded
 
 # Stuff related to the GPG public key generation process. This process
 # is intended as an EXAMPLE only. Do NOT use it.

@@ -4,7 +4,8 @@ include ../host.def
 
 .PRECIOUS: %.h %.moc.cpp %.moc.o %.cpp %impl.h %impl.cpp build/x11/%.moc.cpp build/embedded/%.moc.cpp
 
-all: build build/x11/qagent_x11 build/embedded/qagent_embedded
+# all: build build/x11/qagent_x11 build/embedded/qagent_embedded
+all: build build/x11/qagent_x11
 
 CC=gcc
 CPP=gcc
@@ -19,6 +20,9 @@ qmfiles = qagent_en.qm
 
 %.qm : %.ts qagent.pro
 	lrelease qagent.pro
+
+%.ts : %.tr qagent.pro
+	lupdate qagent.pro
 
 ############## BUILDS OF DOOM AND EVIL ###############
 
@@ -46,12 +50,15 @@ build/x11/qagent_x11: $(x11_objects)
 	$(CPP) -pipe -g -o $@ $(x11_objects) -L$(QTX11DIR)/lib -lqt
 
 build/x11/%.moc.o : build/x11/%.moc.cpp
+	export QTDIR=$(QTX11DIR)
 	$(CPP) -c $< -o $@ $(X11_CPPFLAGS)
 
 build/x11/%.moc.cpp: %.h
+	export QTDIR=$(QTX11DIR)
 	$(X11_MOC) -o $@ $<
 
 build/x11/%.o : %.cpp
+	export QTDIR=$(QTX11DIR)
 	$(CPP) -c $< -o $@ $(X11_CPPFLAGS)
 
 build/:
@@ -87,14 +94,27 @@ build/embedded/qagent_embedded: $(embedded_objects)
 	$(CPP) -pipe -g -o $@ $(embedded_objects) -L$(QTEMBEDDEDDIR)/lib -lqte
 
 build/embedded/%.moc.o : build/embedded/%.moc.cpp
-	$(CPP) -c $< -o $@ $(X11_CPPFLAGS)
+	export QTDIR=$(QTEMBEDDEDDIR)
+	$(CPP) -c $< -o $@ $(EMBEDDED_CPPFLAGS)
 
 build/embedded/%.moc.cpp: %.h
+	export QTDIR=$(QTEMBEDDEDDIR)
 	$(EMBEDDED_MOC) -o $@ $<
 
 build/embedded/%.o : %.cpp
+	export QTDIR=$(QTEMBEDDEDDIR)
 	$(CPP) -c $< -o $@ $(EMBEDDED_CPPFLAGS)
-	
+
+######### Common things ##############
+
+UIC=$(QTX11DIR)/bin/uic
+
+qagent.cpp : qagent.ui qagent.h
+	$(UIC) -i $(<:.ui=.h) -o $@ $<
+
+qagent.h : qagent.ui
+	$(UIC) -o $@ $<
+
 ######### Put away your toys. ########
 
 clean:
