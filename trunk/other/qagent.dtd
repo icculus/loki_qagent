@@ -1,5 +1,6 @@
 <!ELEMENT qagent_report (header,fenris,rpmdump,
 gldump,hwdump,md5dump,netdump,procdump,stackdump,xinfo)>
+
 <!ELEMENT header (product_name,product_path,product_cdrom,product_version,product_desc,
 product_prefs, user_name,user_email,user_regno,user_comment)>
 <!ELEMENT product_name (#CDATA)>
@@ -12,12 +13,16 @@ product_prefs, user_name,user_email,user_regno,user_comment)>
 <!ELEMENT user_email (#CDATA)>
 <!ELEMENT user_regno (#CDATA)>
 <!ELEMENT user_comment (#CDATA)>
+
 <!ELEMENT fenris (fenris_login,fenris_password,fenris_bugtext)>
 <!ELEMENT fenris_login (#CDATA)>
 <!ELEMENT fenris_password (#CDATA)>
 <!ELEMENT fenris_bugtext (#CDATA)>
+
 <!ELEMENT rpmdump (#CDATA)>
+
 <!ELEMENT gldump (#CDATA)>
+
 <!ELEMENT hwdump (cpu,memory,bridge,ide,scsi,usb,harddisk,floppy,cdrom,videocard,
 ethernet,sound,mouse,joystick)>
 <!ELEMENT cpu (vendor,model,frequency,flags,bogomips,bugs)>
@@ -33,9 +38,48 @@ ethernet,sound,mouse,joystick)>
 <!ELEMENT sound (bus,vendor,model,options,module)>
 <!ELEMENT mouse (bus,vendor,model,device)>
 <!ELEMENT joystick (bus,vendor,model,device,module)>
+<!ELEMENT vendor (#CDATA)>
+<!ELEMENT model (#CDATA)>
+<!ELEMENT frequency (#CDATA)>
+<!ELEMENT flags (#CDATA)>
+<!ELEMENT bogomips (#CDATA)>
+<!ELEMENT bugs (#CDATA)>
+<!ELEMENT total (#CDATA)>
+<!ELEMENT free (#CDATA)>
+<!ELEMENT shared (#CDATA)>
+<!ELEMENT buffers (#CDATA)>
+<!ELEMENT cached (#CDATA)>
+<!ELEMENT swap_free (#CDATA)>
+<!ELEMENT swap_total (#CDATA)>
+<!ELEMENT bus (#CDATA)>
+<!ELEMENT vendor (#CDATA)>
+<!ELEMENT model (#CDATA)>
+<!ELEMENT module (#CDATA)>
+<!ELEMENT options (#CDATA)>
+<!ELEMENT device (#CDATA)>
+<!ELEMENT server (#CDATA)>
+<!ELEMENT memory (#CDATA)>
+<!ELEMENT ramdac (#CDATA)>
+<!ELEMENT clockchip (#CDATA)>
+<!ELEMENT size (#CDATA)>
+<!ELEMENT heads (#CDATA)>
+<!ELEMENT sectors (#CDATA)>
+<!ELEMENT cylinders (#CDATA)>
 
+<!ELEMENT md5dump (#CDATA)>
 
+<!ELEMENT netdump (ifconfig route)>
+<!ELEMENT ifconfig (#CDATA)>
+<!ELEMENT route (#CDATA)>
 
+<!ELEMENT procdump (cpuinfo meminfo modules version)>
+<!ELEMENT cpuinfo (#CDATA)>
+<!ELEMENT meminfo (#CDATA)>
+<!ELEMENT modules (#CDATA)>
+<!ELEMENT version (#CDATA)>
 
+<!ELEMENT stackdump (#CDATA)>
 
-
+<!ELEMENT xinfo (xdpyinfo xf86config)>
+<!ELEMENT xdpyinfo (#CDATA)>
+<!ELEMENT xf86config (#CDATA)>
