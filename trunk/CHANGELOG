@@ -1,5 +1,8 @@
 01/04/00	Nicholas Vining		<mordred@lokigames.com>
 
+	* Changes to makefile to make things compile again. The embedded
+	  build still doesn't work.
+
 	* Fine. NOW it speaks XML properly. Missed a few last time.
 
 12/19/00	Nicholas Vining		<mordred@lokigames.com>
