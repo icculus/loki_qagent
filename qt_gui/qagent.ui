@@ -212,13 +212,6 @@
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <widget row="2"  column="1" >
                 <class>QButtonGroup</class>
@@ -297,13 +290,6 @@
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>Expanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
@@ -401,13 +387,6 @@
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <widget row="2"  column="1" >
                 <class>QComboBox</class>
@@ -439,13 +418,6 @@
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>Expanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
@@ -539,13 +511,6 @@
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <widget row="0"  column="1" >
                 <class>QLabel</class>
@@ -587,13 +552,6 @@
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>Expanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
@@ -935,13 +893,6 @@
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <spacer row="8"  column="1" >
                 <property>
@@ -955,13 +906,6 @@
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>Expanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
@@ -1472,13 +1416,6 @@
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <spacer row="3"  column="1" >
                 <property>
@@ -1492,13 +1429,6 @@
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>MinimumExpanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
@@ -1790,13 +1720,6 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
                         <height>20</height>
                     </size>
                 </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
-                </property>
             </spacer>
             <spacer row="2"  column="3" >
                 <property>
@@ -1810,13 +1733,6 @@ GNU Privacy Guard is available from http://www.gnupg.org, and is licensed under 
                 <property stdset="1">
                     <name>sizeType</name>
                     <enum>Expanding</enum>
-                </property>
-                <property>
-                    <name>sizeHint</name>
-                    <size>
-                        <width>20</width>
-                        <height>20</height>
-                    </size>
                 </property>
                 <property>
                     <name>sizeHint</name>
